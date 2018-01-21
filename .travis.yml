@@ -19,6 +19,7 @@ before_install:
 # por gh-pages:gh-pages
 - git fetch origin -f master:master
 install:
+- pip install Markdown
 - pip install --upgrade pip
 - pip install -r requirements.txt
 script:
