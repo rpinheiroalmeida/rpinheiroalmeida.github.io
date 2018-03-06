@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Rodrigo Pinheiro'
 SITENAME = "catch (Exception)"
-SITEURL = ''
+SITEURL = 'https://rpinheiroalmeida.github.io'
 BROWSER_COLOR = '#d9411e'
 
 PATH = 'content'
