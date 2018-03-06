@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'Rodrigo Pinheiro'
-SITENAME = "Exception"
+SITENAME = "catch (Exception)"
 SITEURL = ''
 BROWSER_COLOR = '#d9411e'
 
@@ -21,14 +21,17 @@ AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+# LINKS = (('Pelican', 'http://getpelican.com/'),
+#          ('Python.org', 'http://python.org/'),
+#          ('Jinja2', 'http://jinja.pocoo.org/'),
+#          ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (
+    ('github', 'https://github.com/rpinheiroalmeida'),
+    ('twitter', 'https://twitter.com/_rodrigopa_'),
+    ('linkedin', 'https://www.linkedin.com/in/rpinheiroalmeida')
+)
 
 DEFAULT_PAGINATION = 10
 
@@ -44,9 +47,46 @@ MENUITEMS = (('Archives', '/archives.html'),
 
 OG_LOCALE = u'pt_BR'
 
-SITETITLE = u'Import None'
-SITESUBTITLE = u'Code! Code! Code!'
-SITEDESCRIPTION = u'from none import thoughts'
+SITETITLE = u'Catch code'
+SITESUBTITLE = u'throw exception'
+SITEDESCRIPTION = u'logger.info(exception)'
+
+FEED_ALL_RSS = 'feeds.rss'
+CATEGORY_FEED_RSS = 'feeds/%s.rss'
+FEED_ALL_ATOM = 'feeds.atom'
+CATEGORY_FEED_ATOM = 'feeds/%s.atom'
+FEED_USE_SUMMARY = True
+
+DISPLAY_CATEGORIES_ON_MENU = False
+DISPLAY_PAGES_ON_MENU = False
+
+TAG_CLOUD_STEPS = 8
+TAG_CLOUD_MAX_ITEMS = 100
+
+FAVICON = '/images/favicon.ico'
+
+# Plugins
+# PLUGIN_PATH = './.plugins'
+# PLUGINS = [
+#         'gzip_cache',
+#         'sitemap',
+#         'related_posts',
+#     ]
+
+THEME = './temas/Flex'
+
+#Static Paths
+# STATIC_PATHS = [
+#     'output/audio',
+#     'output/images',
+#     'output/extra/robots.txt',
+#     'output/extra/favicon.ico',
+#     ]
+
+# EXTRA_PATH_METADATA = {
+#     'extra/robots.txt': {'/output/images/': 'robots.txt'},
+#     'extra/favicon.ico': {'/output/images/': 'favicon.ico'},
+#     }
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
