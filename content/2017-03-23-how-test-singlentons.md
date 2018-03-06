@@ -5,12 +5,13 @@ categories: articles
 tags: unit test, software design, singlenton, legacy code
 comments: true
 share: true
+authors: Rodrigo Pinheiro
 ---
 
 Há diversos tipos de dependência que tornam difíceis criar e usar frameworks de
 testes, uma delas é quando envolve variáveis globais, que em Java podem ser
-desenvolvidas através do design pattern ([Singleton]
-(http://en.wikipedia.org/wiki/Singleton_pattern)), como no exemplo abaixo:
+desenvolvidas através do design pattern 
+[Singleton](http://en.wikipedia.org/wiki/Singleton_pattern), como no exemplo abaixo:
 
 ```java
 public class Switches {
