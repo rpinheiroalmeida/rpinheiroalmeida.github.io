@@ -4,8 +4,7 @@ branches:
   - pelican
 language: python
 python:
-    - "2.7"
-    - "3.4"
+    - "3.5"
 before_install:
 # troque a linha abaixo pelo resultado do comando:
 # travis encrypt-file publish-key
