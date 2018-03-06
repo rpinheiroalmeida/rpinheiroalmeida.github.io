@@ -1,5 +1,5 @@
 ---
-Title: Objetos Seam - O que são, por que usá-los e quando
+Title: Objetos Seam - O que
 Slug: objetos-seam
 Date: 2017-03-23 22:49
 categories: articles
