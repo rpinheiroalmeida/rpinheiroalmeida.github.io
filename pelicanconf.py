@@ -4,14 +4,17 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Rodrigo Pinheiro'
 SITENAME = "catch (Exception)"
-SITEURL = 'https://rpinheiroalmeida.github.io'
+# SITEURL = 'https://rpinheiroalmeida.github.io'
+SITEURL = ''
 BROWSER_COLOR = '#d9411e'
 
 PATH = 'content'
 
 TIMEZONE = 'America/Sao_Paulo'
 
-DEFAULT_LANG = 'pt'
+DEFAULT_LANG = 'pt_BR.UTF-8'
+# LANG = pt_BR.UTF-8
+# LANGUAGE = pt_BR:pt:en
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
