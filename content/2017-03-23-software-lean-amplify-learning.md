@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Lean Software — Aplificando o conhecimento
 modified: 2017-03-23 22:49
 categories: articles
