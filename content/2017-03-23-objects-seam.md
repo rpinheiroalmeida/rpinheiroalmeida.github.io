@@ -1,8 +1,7 @@
 ---
 Title: Objetos Seam - O que são, por que usá-los e quando
-Slug: objetos-seam
 Date: 2017-03-23 22:49
-categories: articles
+Category: Legacy Code
 tags: unit test, software design, legacy code
 comments: true
 share: true

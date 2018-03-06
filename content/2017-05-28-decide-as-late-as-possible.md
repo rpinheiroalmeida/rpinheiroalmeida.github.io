@@ -1,7 +1,7 @@
 ---
 title: Decida o mais tarde possível
 modified: 2017-05-28 14:25
-categories: articles
+Category: Lean
 tags: Lean Software, Decide as Late as Possible, Custo
 comments: true
 share: true

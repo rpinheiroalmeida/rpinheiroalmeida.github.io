@@ -2,7 +2,7 @@
 layout: post
 title: Agile transformation my first experience
 modified: 2018-01-16 22:22
-categories: articles
+Category: Legacy code
 tags: Lean Software, Agile, Transformation
 comments: true
 share: true

@@ -1,7 +1,7 @@
 ---
 Title: Como testar Singletons?
 Date: 2017-03-23 22:49
-categories: articles
+Category: Legacy Code
 tags: unit test, software design, singlenton, legacy code
 comments: true
 share: true

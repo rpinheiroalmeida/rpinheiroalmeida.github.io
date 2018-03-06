@@ -1,7 +1,7 @@
 ---
 title: Como foi a minha experiência na apresentação do TDC?
 modified: 2017-05-04 21:49
-categories: articles
+Category: articles
 tags: TDC, microservices, presentation
 comments: true
 share: true

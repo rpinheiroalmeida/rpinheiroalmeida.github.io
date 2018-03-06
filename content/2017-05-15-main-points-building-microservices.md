@@ -1,7 +1,7 @@
 ---
 title: Main Points - Building Microservices
 modified: 2017-03-22 22:49
-categories: articles
+Category: Microservices
 tags: microservices
 comments: true
 share: true
