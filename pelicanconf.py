@@ -54,12 +54,6 @@ SITETITLE = u'Catch code'
 SITESUBTITLE = u'throw exception'
 SITEDESCRIPTION = u'logger.info(exception)'
 
-# FEED_ALL_RSS = 'feeds.rss'
-# CATEGORY_FEED_RSS = 'feeds/%s.rss'
-# FEED_ALL_ATOM = 'feeds.atom'
-# CATEGORY_FEED_ATOM = 'feeds/%s.atom'
-# FEED_USE_SUMMARY = True
-
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
 
@@ -75,6 +69,11 @@ FAVICON = '/images/favicon.ico'
 #         'sitemap',
 #         'related_posts',
 #     ]
+
+PLUGINS = [u"disqus_static"]
+DISQUS_SITENAME = u'https://rpinheiroalmeida.github.io'
+DISQUS_SECRET_KEY = u'Zr2wwjWfmeuHXbqEVEzt5ynTrJa3bF4azS8KkWRsBaTTn83fllnQApsn6YL6dJjY'
+DISQUS_PUBLIC_KEY = u'amdM1t932fTVvflet3hgBKjR5EgTVCtWCszMt6lrkRDRRVExfvgFnOvMo38vdTAm'
 
 THEME = './temas/Flex'
 
