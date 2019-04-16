@@ -4,7 +4,7 @@ branches:
   - pelican
 language: python
 python:
-    - "3.7.3"
+    - "3.5"
 before_install:
 # troque a linha abaixo pelo resultado do comando:
 # travis encrypt-file publish-key
@@ -21,9 +21,8 @@ before_install:
 # por gh-pages:gh-pages
 - git fetch origin -f master:master
 install:
-# - pip install Markdown
 - pip install markdown
-- pip install Pygments
+- pip install pygments
 - pip install --upgrade pip
 - pip install -r requirements.txt
 script:
