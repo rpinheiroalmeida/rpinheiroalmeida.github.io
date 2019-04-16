@@ -1,2 +1,5 @@
-pelican==4.0.1
+markdown
+pygments
+disqus-python
+pelican
 ghp-import
