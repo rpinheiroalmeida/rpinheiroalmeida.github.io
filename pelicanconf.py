@@ -13,8 +13,6 @@ PATH = 'content'
 TIMEZONE = 'America/Sao_Paulo'
 
 DEFAULT_LANG = 'pt_BR'
-LANG = 'pt_BR'
-# LANGUAGE = pt_BR:pt:en
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -22,12 +20,6 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
-
-# Blogroll
-# LINKS = (('Pelican', 'http://getpelican.com/'),
-#          ('Python.org', 'http://python.org/'),
-#          ('Jinja2', 'http://jinja.pocoo.org/'),
-#          ('You can modify those links in your config file', '#'),)
 
 # Social widget
 SOCIAL = (
@@ -46,9 +38,6 @@ MAIN_MENU = True
 MENUITEMS = (('Archives', '/article.html'),
              ('Categories', '/categories.html'),
              ('Tags', '/tags.html'),)
-
-
-OG_LOCALE = u'pt_BR'
 
 SITETITLE = u'Catch code'
 SITESUBTITLE = u'throw exception'
