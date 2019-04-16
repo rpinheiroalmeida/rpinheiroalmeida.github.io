@@ -72,9 +72,9 @@ FAVICON = '/images/favicon.ico'
 #     ]
 
 # PLUGINS = [u"disqus_static"]
-# DISQUS_SITENAME = u'https://rpinheiroalmeida.github.io'
-# DISQUS_SECRET_KEY = u'Zr2wwjWfmeuHXbqEVEzt5ynTrJa3bF4azS8KkWRsBaTTn83fllnQApsn6YL6dJjY'
-# DISQUS_PUBLIC_KEY = u'amdM1t932fTVvflet3hgBKjR5EgTVCtWCszMt6lrkRDRRVExfvgFnOvMo38vdTAm'
+DISQUS_SITENAME = u'https://rpinheiroalmeida.github.io'
+DISQUS_SECRET_KEY = u'Zr2wwjWfmeuHXbqEVEzt5ynTrJa3bF4azS8KkWRsBaTTn83fllnQApsn6YL6dJjY'
+DISQUS_PUBLIC_KEY = u'amdM1t932fTVvflet3hgBKjR5EgTVCtWCszMt6lrkRDRRVExfvgFnOvMo38vdTAm'
 
 THEME = './temas/Flex'
 
