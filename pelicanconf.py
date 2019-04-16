@@ -63,7 +63,7 @@ TAG_CLOUD_MAX_ITEMS = 100
 FAVICON = '/images/favicon.ico'
 
 # Plugins
-PLUGIN_PATHS = ["pelican-plugins",]
+PLUGIN_PATHS = ['/pelican-plugins',]
 PLUGINS = [
         # 'gzip_cache',
         # 'sitemap',
