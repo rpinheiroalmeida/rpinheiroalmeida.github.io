@@ -63,17 +63,18 @@ TAG_CLOUD_MAX_ITEMS = 100
 FAVICON = '/images/favicon.ico'
 
 # Plugins
-# PLUGIN_PATH = './.plugins'
-# PLUGINS = [
-#         'gzip_cache',
-#         'sitemap',
-#         'related_posts',
-#     ]
+PLUGIN_PATHS = ["pelican-plugins",]
+PLUGINS = [
+        'gzip_cache',
+        'sitemap',
+        'related_posts',
+        'disqus_static',
+    ]
 
-PLUGINS = ["plugins/disqus_static.py"]
-DISQUS_SITENAME = u'https://rpinheiroalmeida.github.io'
-DISQUS_SECRET_KEY = u'Zr2wwjWfmeuHXbqEVEzt5ynTrJa3bF4azS8KkWRsBaTTn83fllnQApsn6YL6dJjY'
-DISQUS_PUBLIC_KEY = u'amdM1t932fTVvflet3hgBKjR5EgTVCtWCszMt6lrkRDRRVExfvgFnOvMo38vdTAm'
+# PLUGINS = ['disqus_static',]
+# DISQUS_SITENAME = u'https://rpinheiroalmeida.github.io'
+# DISQUS_SECRET_KEY = u'Zr2wwjWfmeuHXbqEVEzt5ynTrJa3bF4azS8KkWRsBaTTn83fllnQApsn6YL6dJjY'
+# DISQUS_PUBLIC_KEY = u'amdM1t932fTVvflet3hgBKjR5EgTVCtWCszMt6lrkRDRRVExfvgFnOvMo38vdTAm'
 
 THEME = './temas/Flex'
 
