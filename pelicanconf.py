@@ -54,11 +54,11 @@ SITETITLE = u'Catch code'
 SITESUBTITLE = u'throw exception'
 SITEDESCRIPTION = u'logger.info(exception)'
 
-FEED_ALL_RSS = 'feeds.rss'
-CATEGORY_FEED_RSS = 'feeds/%s.rss'
-FEED_ALL_ATOM = 'feeds.atom'
-CATEGORY_FEED_ATOM = 'feeds/%s.atom'
-FEED_USE_SUMMARY = True
+# FEED_ALL_RSS = 'feeds.rss'
+# CATEGORY_FEED_RSS = 'feeds/%s.rss'
+# FEED_ALL_ATOM = 'feeds.atom'
+# CATEGORY_FEED_ATOM = 'feeds/%s.atom'
+# FEED_USE_SUMMARY = True
 
 DISPLAY_CATEGORIES_ON_MENU = False
 DISPLAY_PAGES_ON_MENU = False
@@ -77,8 +77,6 @@ FAVICON = '/images/favicon.ico'
 #     ]
 
 THEME = './temas/Flex'
-
-# MD_EXTENSIONS = ['codehilite(noclasses=True, pygments_style=native)', 'extra']  # enable MD options
 
 #Static Paths
 # STATIC_PATHS = [
