@@ -43,7 +43,7 @@ USE_FOLDER_AS_CATEGORY = True
 USE_FOLDER_AS_CATEGORY = True
 MAIN_MENU = True
 
-MENUITEMS = (('Archives', '/archives.html'),
+MENUITEMS = (('Archives', '/article.html'),
              ('Categories', '/categories.html'),
              ('Tags', '/tags.html'),)
 
@@ -72,7 +72,7 @@ FAVICON = '/images/favicon.ico'
 #     ]
 
 # PLUGINS = [u"disqus_static"]
-DISQUS_SITENAME = u'https://rpinheiroalmeida.github.io'
+DISQUS_SITENAME = 'rpinheiroalmeida'
 DISQUS_SECRET_KEY = u'Zr2wwjWfmeuHXbqEVEzt5ynTrJa3bF4azS8KkWRsBaTTn83fllnQApsn6YL6dJjY'
 DISQUS_PUBLIC_KEY = u'amdM1t932fTVvflet3hgBKjR5EgTVCtWCszMt6lrkRDRRVExfvgFnOvMo38vdTAm'
 
