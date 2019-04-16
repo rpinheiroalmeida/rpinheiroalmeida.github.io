@@ -65,9 +65,9 @@ FAVICON = '/images/favicon.ico'
 # Plugins
 PLUGIN_PATHS = ["pelican-plugins",]
 PLUGINS = [
-        'gzip_cache',
-        'sitemap',
-        'related_posts',
+        # 'gzip_cache',
+        # 'sitemap',
+        # 'related_posts',
         'disqus_static',
     ]
 
