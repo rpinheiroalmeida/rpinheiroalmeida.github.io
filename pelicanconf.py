@@ -78,7 +78,7 @@ FAVICON = '/images/favicon.ico'
 
 THEME = './temas/Flex'
 
-MD_EXTENSIONS = ['codehilite(noclasses=True, pygments_style=native)', 'extra']  # enable MD options
+# MD_EXTENSIONS = ['codehilite(noclasses=True, pygments_style=native)', 'extra']  # enable MD options
 
 #Static Paths
 # STATIC_PATHS = [
