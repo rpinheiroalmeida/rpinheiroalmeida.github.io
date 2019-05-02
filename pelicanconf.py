@@ -35,7 +35,8 @@ USE_FOLDER_AS_CATEGORY = True
 USE_FOLDER_AS_CATEGORY = True
 MAIN_MENU = True
 
-MENUITEMS = (('Categories', '/categories.html'),
+MENUITEMS = (('Archives', '/archives.html'),
+             ('Categories', '/categories.html'),
              ('Tags', '/tags.html'),)
 
 SITETITLE = u'Catch code'
