@@ -1,4 +1,4 @@
-baseurl = "http://rpinheiroalmeida.github.io/"
+baseurl = "https://rpinheiroalmeida.github.io/"
 title = "NullPointer"
 theme = "soho"
 DefaultContentLanguage = "pt-br"
