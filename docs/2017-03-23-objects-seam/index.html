@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <title>Objetos Seam - O que são, por que usá-los e quando &middot; NullPointer</title>
+
+  <meta name="description" content="Objetos Seam - O que são, por que usá-los e quando" />
+
+  
+
+<meta itemprop="name" content="Objetos Seam - O que são, por que usá-los e quando">
+<meta itemprop="description" content="Objetos Seam - O que são, por que usá-los e quando">
+<meta itemprop="datePublished" content="2017-03-23T02:13:50+00:00" />
+<meta itemprop="dateModified" content="2017-03-23T02:13:50+00:00" />
+<meta itemprop="wordCount" content="321">
+<meta itemprop="image" content="http://rpinheiroalmeida.github.io/images/profile.png"/>
+
+
+
+<meta itemprop="keywords" content="" />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://rpinheiroalmeida.github.io/images/profile.png"/>
+
+<meta name="twitter:title" content="Objetos Seam - O que são, por que usá-los e quando"/>
+<meta name="twitter:description" content="Objetos Seam - O que são, por que usá-los e quando"/>
+
+
+<meta property="og:title" content="Objetos Seam - O que são, por que usá-los e quando" />
+<meta property="og:description" content="Objetos Seam - O que são, por que usá-los e quando" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rpinheiroalmeida.github.io/2017-03-23-objects-seam/" />
+<meta property="og:image" content="http://rpinheiroalmeida.github.io/images/profile.png"/>
+<meta property="article:published_time" content="2017-03-23T02:13:50+00:00" />
+<meta property="article:modified_time" content="2017-03-23T02:13:50+00:00" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "http://rpinheiroalmeida.github.io/#author",
+      "name": "Rodrigo Pinheiro",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "http://rpinheiroalmeida.github.io/images/profile.png"
+        
+      },
+      "description": "..."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "http://rpinheiroalmeida.github.io/#website",
+      "url": "http://rpinheiroalmeida.github.io/",
+      "name": "NullPointer",
+      "description": "...",
+      "publisher": {
+        "@id": "http://rpinheiroalmeida.github.io/#author"
+      },
+      "inLanguage": ""
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://rpinheiroalmeida.github.io/images/profile.png",
+      "caption": "NullPointer"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "http://rpinheiroalmeida.github.io/2017-03-23-objects-seam/#webpage",
+      "url": "http://rpinheiroalmeida.github.io/2017-03-23-objects-seam/",
+      "name": "Objetos Seam - O que são, por que usá-los e quando",
+      "isPartOf": {
+        "@id": "http://rpinheiroalmeida.github.io/#website"
+      },
+      "about": {
+         "@id": "http://rpinheiroalmeida.github.io/#author"
+      },
+      "datePublished": "2017-03-23T02:13:50+00:00",
+      "dateModified": "2017-03-23T02:13:50+00:00",
+      "description": "Objetos Seam - O que são, por que usá-los e quando",
+      "inLanguage": "",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "http://rpinheiroalmeida.github.io/2017-03-23-objects-seam/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "http://rpinheiroalmeida.github.io/2017-03-23-objects-seam/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "http://rpinheiroalmeida.github.io/2017-03-23-objects-seam/#webpage"
+      },
+      "headline": "Objetos Seam - O que são, por que usá-los e quando",
+      "datePublished": "2017-03-23T02:13:50+00:00",
+      "dateModified": "2017-03-23T02:13:50+00:00",
+      "publisher": {
+        "@id": "http://rpinheiroalmeida.github.io/#author"
+      },
+      "keywords": [
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "",
+      "author": {
+        "@type": "Person",
+        "name": "Rodrigo Pinheiro"
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "http://rpinheiroalmeida.github.io/2017-03-23-objects-seam/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+        </div>
+        
+      
+
+      <h1>NullPointer</h1>
+
+      
+      <p class="lead">...</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="http://rpinheiroalmeida.github.io/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/categories/">Categories</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/rpinheiroalmeida/" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/rpinheiroalmeida" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/_rodrigopa_" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">Objetos Seam - O que são, por que usá-los e quando</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2017-03-23T02:13:50Z">Mar 23, 2017</time> &middot; 2 min read
+  </div>
+
+  <div>
+  <p>Quando se trabalha com código legado e tenta escrever testes de unidade para uma
+classe repleta de dependências, percebe-se a dificuldade e o quão bom o código
+está ou não.</p>
+<p>Vamos olhar um exemplo:</p>
+<pre><code>public class InternationalOrder {
+  public boolean save() throws Exception {
+    if (!Switches.isInternationalOrderFeaturedOn()) {
+      return false;
+    }
+    if (formData.isInternationalOrder()) {
+      ...
+    }
+  }
+}
+</code></pre><p>Como poderíamos escrever testes de unidade sem utilizar frameworks de mocks
+estáticos?</p>
+<p>Para responder a essa questão, poderíamos utilizar o conceito de Seam, mais
+especificamente <strong>Objetos Seam</strong>.</p>
+<blockquote>
+<p>Seam é um lugar onde se pode mudar o comportamento em seu programa, sem alterar
+aquele lugar. (<a href="http://working%20effectively%20with%20legacy%20code/">Working Effectively with Legacy Code</a>).</p>
+</blockquote>
+<p>Logo, podemos considerar a chamada <strong>Switches.isInternationalOrderFeaturedOn</strong>
+como Seam? A resposta é sim porque podemos mudar o seu comportamento sem alterar
+essa linha de código.</p>
+<p>Como exemplo, o que aconteceria se adicionarmos a mesma assinatura na classe
+<strong>SaveInternationalOrder</strong>?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InternationalOrder</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isInternationalOrderFeaturedOn</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">return</span> Switches<span style="color:#f92672">.</span><span style="color:#a6e22e">isInternationalFeaturedOn</span><span style="color:#f92672">()</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Esta simples mudança preserva o comportamento, pois ela apenas delega a chamada
+para uma outra função.</p>
+<p>Se criarmos uma subclasse da classe <strong>InternationOrder</strong> e sobrescrevermos o
+método <strong>isIternationalOrderFeaturedOn()</strong>?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InternationalOrderFeaturedTurnedOn</span> <span style="color:#66d9ef">extends</span> InternationalOrder <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isInternationalOrderFeaturedOn</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Agora ficou simples criar testes para o código sem efeitos colaterais
+desagradáveis.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InternationalOrderTest</span> <span style="color:#f92672">{</span>
+
+  <span style="color:#a6e22e">@Test</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#960050;background-color:#1e0010">﻿</span>saveOrderWhenInternationFeaturedIsTurnedOn<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    InternationalOrder saveOrder <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> InternationalOrderFeaturedTurnedOn<span style="color:#f92672">();</span>
+    assertTrue<span style="color:#f92672">(</span>saveOrder<span style="color:#f92672">.</span><span style="color:#a6e22e">save</span><span style="color:#f92672">());</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Esta é uma possível aplicação para <strong>Objetos Seams</strong>, já que podemos mudar o
+método que é chamado sem alterar o método que o chama.</p>
+<p>Por que usar Seams ao invés de frameworks de testes de unidade com mocks
+estáticos, tais como <strong>PowerMockito</strong>?</p>
+<p>Um dos grandes desafios em trabalhar com código legado é a quebra de
+dependências. Com sorte, as dependências podem ser pequenas e localizadas,
+porém na maioria das vezes, elas são numerosas e espalhadas pelo código.
+Objetos Seams nos ajudam a identificar essas dependências, melhorar o design do
+código e aos poucos excluir dependências indesejadas.</p>
+
+  </div>
+
+  <div>
+  <ul class="tags"></ul>
+</div>
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="http://rpinheiroalmeida.github.io/2017-03-23-objects-seam/"
+     data-text="Objetos Seam - O que são, por que usá-los e quando"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="http://rpinheiroalmeida.github.io/2017-03-23-objects-seam/"
+     data-text="Objetos Seam - O que são, por que usá-los e quando"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="http://rpinheiroalmeida.github.io/2017-03-23-objects-seam/"
+     data-text="Objetos Seam - O que são, por que usá-los e quando"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="http://rpinheiroalmeida.github.io/2017-03-23-objects-seam/"
+     data-text="Objetos Seam - O que são, por que usá-los e quando"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="http://rpinheiroalmeida.github.io/2017-03-23-objects-seam/"
+     data-text="Objetos Seam - O que são, por que usá-los e quando"><i class="fab fa-pinterest"></i></a>
+</div>
+
+</div>
+
+
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; Rodrigo Pinheiro 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+      &middot; Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+</body>
+</html>

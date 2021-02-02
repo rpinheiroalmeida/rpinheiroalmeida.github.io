@@ -6,6 +6,7 @@ enableInlineShortcodes = true
 summarylength = 10
 enableEmoji = true
 paginate = 5
+publishDir = "docs"
 
 [params]
 intro = true
