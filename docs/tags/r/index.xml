@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>R on NullPointer</title>
-    <link>https://rpinheiroalmeida.github.io/tags/r/</link>
+    <link>https://rpinheiroalmeida.dev/tags/r/</link>
     <description>Recent content in R on NullPointer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 02 Feb 2021 02:13:50 +0000</lastBuildDate><atom:link href="https://rpinheiroalmeida.github.io/tags/r/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Feb 2021 02:13:50 +0000</lastBuildDate><atom:link href="https://rpinheiroalmeida.dev/tags/r/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Relatório COVID-19</title>
-      <link>https://rpinheiroalmeida.github.io/relatorio_covid/</link>
+      <link>https://rpinheiroalmeida.dev/relatorio_covid/</link>
       <pubDate>Tue, 02 Feb 2021 02:13:50 +0000</pubDate>
       
-      <guid>https://rpinheiroalmeida.github.io/relatorio_covid/</guid>
+      <guid>https://rpinheiroalmeida.dev/relatorio_covid/</guid>
       <description>Este é o relatório diário da situação de óbitos por COVID19 no Brasil e Estados Unidos, com base em dados obtidos a partir de API, disponível no endereço</description>
     </item>
     
