@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on NullPointer</title>
-    <link>https://rpinheiro.dev/page/</link>
+    <link>http://rpinheiro.dev/page/</link>
     <description>Recent content in Pages on NullPointer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Fri, 03 Apr 2015 02:13:50 +0000</lastBuildDate><atom:link href="https://rpinheiro.dev/page/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Apr 2015 02:13:50 +0000</lastBuildDate><atom:link href="http://rpinheiro.dev/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
-      <link>https://rpinheiro.dev/page/about/</link>
+      <link>http://rpinheiro.dev/page/about/</link>
       <pubDate>Fri, 03 Apr 2015 02:13:50 +0000</pubDate>
       
-      <guid>https://rpinheiro.dev/page/about/</guid>
+      <guid>http://rpinheiro.dev/page/about/</guid>
       <description>About Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec dolor in magna lobortis egestas.</description>
     </item>
     
     <item>
       <title>Contact</title>
-      <link>https://rpinheiro.dev/page/contact/</link>
+      <link>http://rpinheiro.dev/page/contact/</link>
       <pubDate>Fri, 03 Apr 2015 02:13:50 +0000</pubDate>
       
-      <guid>https://rpinheiro.dev/page/contact/</guid>
+      <guid>http://rpinheiro.dev/page/contact/</guid>
       <description>Contact Aenean ipsum justo, semper eu nisl ut, pretium tincidunt sem.</description>
     </item>
     

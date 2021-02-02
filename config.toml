@@ -1,4 +1,4 @@
-baseurl = "https://rpinheiro.dev/"
+baseurl = "http://rpinheiro.dev/"
 title = "NullPointer"
 theme = "soho"
 DefaultContentLanguage = "pt-br"

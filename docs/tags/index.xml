@@ -2,43 +2,43 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on NullPointer</title>
-    <link>https://rpinheiro.dev/tags/</link>
+    <link>http://rpinheiro.dev/tags/</link>
     <description>Recent content in Tags on NullPointer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 02 Feb 2021 02:13:50 +0000</lastBuildDate><atom:link href="https://rpinheiro.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Feb 2021 02:13:50 +0000</lastBuildDate><atom:link href="http://rpinheiro.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>covid19</title>
-      <link>https://rpinheiro.dev/tags/covid19/</link>
+      <link>http://rpinheiro.dev/tags/covid19/</link>
       <pubDate>Tue, 02 Feb 2021 02:13:50 +0000</pubDate>
       
-      <guid>https://rpinheiro.dev/tags/covid19/</guid>
+      <guid>http://rpinheiro.dev/tags/covid19/</guid>
       <description></description>
     </item>
     
     <item>
       <title>estatística</title>
-      <link>https://rpinheiro.dev/tags/estat%C3%ADstica/</link>
+      <link>http://rpinheiro.dev/tags/estat%C3%ADstica/</link>
       <pubDate>Tue, 02 Feb 2021 02:13:50 +0000</pubDate>
       
-      <guid>https://rpinheiro.dev/tags/estat%C3%ADstica/</guid>
+      <guid>http://rpinheiro.dev/tags/estat%C3%ADstica/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>https://rpinheiro.dev/tags/r/</link>
+      <link>http://rpinheiro.dev/tags/r/</link>
       <pubDate>Tue, 02 Feb 2021 02:13:50 +0000</pubDate>
       
-      <guid>https://rpinheiro.dev/tags/r/</guid>
+      <guid>http://rpinheiro.dev/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>index</title>
-      <link>https://rpinheiro.dev/tags/index/</link>
+      <link>http://rpinheiro.dev/tags/index/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://rpinheiro.dev/tags/index/</guid>
+      <guid>http://rpinheiro.dev/tags/index/</guid>
       <description></description>
     </item>
     
