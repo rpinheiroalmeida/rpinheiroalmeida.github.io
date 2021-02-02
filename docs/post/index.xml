@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on NullPointer</title>
-    <link>https://rpinheiro.dev/post/</link>
+    <link>https://rpinheiroalmeida.github.io/post/</link>
     <description>Recent content in Posts on NullPointer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 02 Feb 2021 02:13:50 +0000</lastBuildDate><atom:link href="https://rpinheiro.dev/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Feb 2021 02:13:50 +0000</lastBuildDate><atom:link href="https://rpinheiroalmeida.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Relatório COVID-19</title>
-      <link>https://rpinheiro.dev/relatorio_covid/</link>
+      <link>https://rpinheiroalmeida.github.io/relatorio_covid/</link>
       <pubDate>Tue, 02 Feb 2021 02:13:50 +0000</pubDate>
       
-      <guid>https://rpinheiro.dev/relatorio_covid/</guid>
+      <guid>https://rpinheiroalmeida.github.io/relatorio_covid/</guid>
       <description>Este é o relatório diário da situação de óbitos por COVID19 no Brasil e Estados Unidos, com base em dados obtidos a partir de API, disponível no endereço</description>
     </item>
     
     <item>
       <title>Objetos Seam - O que são, por que usá-los e quando</title>
-      <link>https://rpinheiro.dev/2017-03-23-objects-seam/</link>
+      <link>https://rpinheiroalmeida.github.io/2017-03-23-objects-seam/</link>
       <pubDate>Thu, 23 Mar 2017 02:13:50 +0000</pubDate>
       
-      <guid>https://rpinheiro.dev/2017-03-23-objects-seam/</guid>
+      <guid>https://rpinheiroalmeida.github.io/2017-03-23-objects-seam/</guid>
       <description>Quando se trabalha com código legado e tenta escrever testes de unidade para uma classe repleta de dependências, percebe-se a dificuldade e o quão bom o código está ou não.</description>
     </item>
     
