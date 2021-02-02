@@ -1,0 +1,86 @@
+baseurl = "/"
+title = "NullPointer"
+theme = "soho"
+DefaultContentLanguage = "pt-br"
+enableInlineShortcodes = true
+summarylength = 10
+enableEmoji = true
+paginate = 5
+
+[params]
+intro = true
+headline = "My headline"
+description = "..."
+email = "XXX@example.com"
+opengraph = true
+shareTwitter = true
+dateFormat = "Mon, Jan 2, 2006"
+author = "Rodrigo Pinheiro"
+images = ["images/profile.png"]
+profilePicture = "images/profile.png"
+copyright = "Rodrigo Pinheiro"
+license = "CC BY-SA 4.0"
+licenseURL = "https://creativecommons.org/licenses/by-sa/4.0"
+builtWith = true
+mainSections = ["post"]
+
+    [[params.socialIcons]]
+    icon = "fa-linkedin"
+    title = "Linkedin"
+    url = "https://www.linkedin.com/in/rpinheiroalmeida/"
+  
+    [[params.socialIcons]]
+    icon = "fa-github"
+    title = "GitHub"
+    url = "https://github.com/rpinheiroalmeida"
+
+    [[params.socialIcons]]
+    icon = "fa-twitter"
+    title = "Twitter"
+    url = "https://twitter.com/_rodrigopa_"
+
+    
+[taxonomies]
+series = "series"
+category = "categories"
+tag = "tags"
+
+[menu]
+
+    [[menu.main]]
+    name = "Posts"
+    weight = 100
+    identifier = "posts"
+    url = "/posts/"
+
+    [[menu.main]]
+    name = "Categories"
+    weight = 200
+    identifier = "categories"
+    url = "/categories/"
+
+    [[menu.main]]
+    name = "Tags"
+    weight = 200
+    identifier = "tags"
+    url = "/tags/"
+
+[markup]
+
+  [markup.highlight]
+  codeFences = true
+  guessSyntax = false
+  hl_Lines = ""
+  lineNoStart = 1
+  lineNos = false
+  lineNumbersInTable = true
+  noClasses = true
+  style = "monokai"
+  tabWidth = 4
+
+
+
+
+
+[Permalinks]
+    post = "/:filename/"
