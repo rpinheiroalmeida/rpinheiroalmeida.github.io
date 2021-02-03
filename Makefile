@@ -17,7 +17,7 @@ hugo:
 server:
 	$(HUGO) server
 
-publish:
+publish: hugo
 	@echo 'Deploying updates to GitHub...'
 	git add .
 	git commit -m $(MSG)
