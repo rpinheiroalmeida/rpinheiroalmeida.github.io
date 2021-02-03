@@ -12,6 +12,7 @@ help:
 	@echo '                                                                          '
 
 hugo:
+	@echo -e '\e[1;34mBCompiling Hugo!!! $<\e[0m'
 	$(HUGO)
 
 server:
