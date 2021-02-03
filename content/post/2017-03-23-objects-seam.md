@@ -3,6 +3,9 @@ title = "Objetos Seam - O que são, por que usá-los e quando"
 description = "Objetos Seam - O que são, por que usá-los e quando"
 date = 2017-03-23T02:13:50Z
 author = "Rodrigo Pinheiro"
+tags = ["Java", "Código Legado"]
+categories = ["desenvolvimento", "código legado"]
+aliases = ["objetos seams"]
 +++
 
 Quando se trabalha com código legado e tenta escrever testes de unidade para uma

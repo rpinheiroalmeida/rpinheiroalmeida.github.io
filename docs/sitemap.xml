@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>http://rpinheiro.dev/relatorio_covid/</loc>
+    <loc>http://rpinheiro.dev/2021-02-02-relatorio-covid/</loc>
     <lastmod>2021-02-02T02:13:50+00:00</lastmod>
   </url>
   
@@ -48,8 +48,188 @@
   </url>
   
   <url>
+    <loc>http://rpinheiro.dev/tags/desenvolvimento/</loc>
+    <lastmod>2019-05-01T18:00:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/categories/desenvolvimento/</loc>
+    <lastmod>2019-05-01T18:00:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/java/</loc>
+    <lastmod>2019-05-01T18:00:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/spring-boot/</loc>
+    <lastmod>2019-05-01T18:00:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/togglz/</loc>
+    <lastmod>2019-05-01T18:00:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/2019-05-01-feature-toggle-manager/</loc>
+    <lastmod>2019-05-01T18:00:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/agile/</loc>
+    <lastmod>2018-01-16T22:22:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/2017-10-02-software-transformation/</loc>
+    <lastmod>2018-01-16T22:22:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/lean-software/</loc>
+    <lastmod>2018-01-16T22:22:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/categories/metodologias-%C3%A1geis/</loc>
+    <lastmod>2018-01-16T22:22:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/2017-05-28-decide-as-late-as-possible/</loc>
+    <lastmod>2017-05-28T14:25:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/2017-05-15-main-points-building-microservices/</loc>
+    <lastmod>2017-05-15T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/microservices/</loc>
+    <lastmod>2017-05-15T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/categories/microservices/</loc>
+    <lastmod>2017-05-15T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/categories/resenhas/</loc>
+    <lastmod>2017-05-15T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/apresenta%C3%A7%C3%B5es/</loc>
+    <lastmod>2017-05-04T21:49:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/categories/apresenta%C3%A7%C3%B5es/</loc>
+    <lastmod>2017-05-04T21:49:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/2017-05-04-my-experience-tdc/</loc>
+    <lastmod>2017-05-04T21:49:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/tdc/</loc>
+    <lastmod>2017-05-04T21:49:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/arquitetura/</loc>
+    <lastmod>2017-03-23T22:49:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/categories/arquitetura/</loc>
+    <lastmod>2017-03-23T22:49:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/2017-03-23-como-testar-singletons/</loc>
+    <lastmod>2017-03-23T22:49:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/c%C3%B3digo-legado/</loc>
+    <lastmod>2017-03-23T22:49:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/evolucion%C3%A1ria/</loc>
+    <lastmod>2017-03-23T22:49:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/2017-03-23-software-lean-amplify-learning/</loc>
+    <lastmod>2017-03-23T22:49:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/singlenton/</loc>
+    <lastmod>2017-03-23T22:49:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/software-design/</loc>
+    <lastmod>2017-03-23T22:49:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/categories/software-design/</loc>
+    <lastmod>2017-03-23T22:49:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/2017-03-25-non-evolutionary-architecture/</loc>
+    <lastmod>2017-03-23T22:49:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/unit-test/</loc>
+    <lastmod>2017-03-23T22:49:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/categories/c%C3%B3digo-legado/</loc>
+    <lastmod>2017-03-23T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://rpinheiro.dev/2017-03-23-objects-seam/</loc>
     <lastmod>2017-03-23T02:13:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/categories/arquiteturas/</loc>
+    <lastmod>2017-03-22T22:49:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/code/</loc>
+    <lastmod>2017-03-22T22:49:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/2017-03-29-how-to-model-service/</loc>
+    <lastmod>2017-03-22T22:49:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/legacy/</loc>
+    <lastmod>2017-03-22T22:49:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/2017-03-22-what-are-microservices/</loc>
+    <lastmod>2017-03-22T22:49:50+00:00</lastmod>
   </url>
   
   <url>

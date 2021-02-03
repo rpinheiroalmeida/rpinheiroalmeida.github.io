@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <title>Como testar Singletons? &middot; NullPointer</title>
+
+  <meta name="description" content="Algumas técnicas de como realizar testes em classes Singletons" />
+
+  
+
+<meta itemprop="name" content="Como testar Singletons?">
+<meta itemprop="description" content="Algumas técnicas de como realizar testes em classes Singletons">
+<meta itemprop="datePublished" content="2017-03-23T22:49:50+00:00" />
+<meta itemprop="dateModified" content="2017-03-23T22:49:50+00:00" />
+<meta itemprop="wordCount" content="608">
+<meta itemprop="image" content="http://rpinheiro.dev/images/profile.png"/>
+
+
+
+<meta itemprop="keywords" content="unit test,software design,singlenton,código legado," />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://rpinheiro.dev/images/profile.png"/>
+
+<meta name="twitter:title" content="Como testar Singletons?"/>
+<meta name="twitter:description" content="Algumas técnicas de como realizar testes em classes Singletons"/>
+
+
+<meta property="og:title" content="Como testar Singletons?" />
+<meta property="og:description" content="Algumas técnicas de como realizar testes em classes Singletons" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rpinheiro.dev/2017-03-23-como-testar-singletons/" />
+<meta property="og:image" content="http://rpinheiro.dev/images/profile.png"/>
+<meta property="article:published_time" content="2017-03-23T22:49:50+00:00" />
+<meta property="article:modified_time" content="2017-03-23T22:49:50+00:00" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "http://rpinheiro.dev/#author",
+      "name": "Rodrigo Pinheiro",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "http://rpinheiro.dev/images/profile.png"
+        
+      },
+      "description": "..."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "http://rpinheiro.dev/#website",
+      "url": "http://rpinheiro.dev/",
+      "name": "NullPointer",
+      "description": "...",
+      "publisher": {
+        "@id": "http://rpinheiro.dev/#author"
+      },
+      "inLanguage": ""
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://rpinheiro.dev/images/profile.png",
+      "caption": "NullPointer"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "http://rpinheiro.dev/2017-03-23-como-testar-singletons/#webpage",
+      "url": "http://rpinheiro.dev/2017-03-23-como-testar-singletons/",
+      "name": "Como testar Singletons?",
+      "isPartOf": {
+        "@id": "http://rpinheiro.dev/#website"
+      },
+      "about": {
+         "@id": "http://rpinheiro.dev/#author"
+      },
+      "datePublished": "2017-03-23T22:49:50+00:00",
+      "dateModified": "2017-03-23T22:49:50+00:00",
+      "description": "Algumas técnicas de como realizar testes em classes Singletons",
+      "inLanguage": "",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "http://rpinheiro.dev/2017-03-23-como-testar-singletons/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "http://rpinheiro.dev/2017-03-23-como-testar-singletons/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "http://rpinheiro.dev/2017-03-23-como-testar-singletons/#webpage"
+      },
+      "headline": "Como testar Singletons?",
+      "datePublished": "2017-03-23T22:49:50+00:00",
+      "dateModified": "2017-03-23T22:49:50+00:00",
+      "publisher": {
+        "@id": "http://rpinheiro.dev/#author"
+      },
+      "keywords": [,
+        "singlenton"
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "",
+      "author": {
+        "@type": "Person",
+        "name": "Rodrigo Pinheiro"
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "http://rpinheiro.dev/2017-03-23-como-testar-singletons/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+        </div>
+        
+      
+
+      <h1>NullPointer</h1>
+
+      
+      <p class="lead">...</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="http://rpinheiro.dev/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/categories/">Categories</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/rpinheiroalmeida/" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/rpinheiroalmeida" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/_rodrigopa_" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">Como testar Singletons?</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2017-03-23T22:49:50Z">Mar 23, 2017</time> &middot; 3 min read
+  </div>
+
+  <div>
+  <p>Há diversos tipos de dependência que tornam difíceis criar e usar frameworks de
+testes, uma delas é quando envolve variáveis globais, que em Java podem ser
+desenvolvidas através do design pattern
+<a href="http://en.wikipedia.org/wiki/Singleton_pattern">Singleton</a>, como no exemplo abaixo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Switches</span> <span style="color:#f92672">{</span>
+   <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> Switches instance <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+
+   <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">Switches</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>switchState <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> switchState<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+         loadAllFeatureStates<span style="color:#f92672">();</span>
+      <span style="color:#f92672">}</span>
+   <span style="color:#f92672">}</span>
+
+   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Switches <span style="color:#a6e22e">getInstance</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>instance <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+         instance <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Switches<span style="color:#f92672">();</span>
+      <span style="color:#f92672">}</span>
+      <span style="color:#66d9ef">return</span> instance<span style="color:#f92672">;</span>
+   <span style="color:#f92672">}</span>
+
+   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">getFeatureState</span><span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> String featureName<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      <span style="color:#f92672">...</span>
+   <span style="color:#f92672">}</span>
+
+<span style="color:#f92672">}</span>
+</code></pre></div><p>O método <strong>getInstance</strong> de <strong>Swithces</strong> é um método estático cujo objetivo é retornar
+apenas uma instância da classe Switches em toda a aplicação.</p>
+<p>Em Java, o design pattern Singleton é um dos mecanismos usados para fazer
+variáveis globais, o que geralmente, são uma péssima ideia por várias razões.
+Uma delas é a obscuridade. Quando vemos um trecho de código é bom saber qual é
+o efeito daquele código, quais as classes e variáveis são afetadas por
+alterações daquele código. Ter essa visão com variáveis globais pode ser difícil.</p>
+<p>Como sabemos o objetivo de um Singleton é tornar impossível a criação de mais de
+uma instância do objeto para toda a aplicação, o que não há problemas para o
+código de produção, porém, quando estivermos escrevendo testes de unidade, onde
+cada suite de teste deve ser uma mini-aplicação, isolada totalmente de outros
+testes, isso se torna um problema.</p>
+<p>Como uma solução rápida, podemos criar um método estático responsável por
+alterar a instância da classe <strong>Switches</strong> apenas para testes, conforme código
+abaixo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Switches</span> <span style="color:#f92672">{</span>
+   <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> Switches instance <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+
+   <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">Switches</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>switchState <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> switchState<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+         loadAllFeatureStates<span style="color:#f92672">();</span>
+      <span style="color:#f92672">}</span>
+   <span style="color:#f92672">}</span>
+
+   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Switches <span style="color:#a6e22e">getInstance</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>instance <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+         instance <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Switches<span style="color:#f92672">();</span>
+      <span style="color:#f92672">}</span>
+      <span style="color:#66d9ef">return</span> instance<span style="color:#f92672">;</span>
+   <span style="color:#f92672">}</span>
+
+   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">getFeatureState</span><span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> String featureName<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      <span style="color:#f92672">...</span>
+   <span style="color:#f92672">}</span>
+
+   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setInstanceForTest</span><span style="color:#f92672">(</span>Switches switches<span style="color:#f92672">){</span>
+      instance <span style="color:#f92672">=</span> switches<span style="color:#f92672">;</span>
+   <span style="color:#f92672">}</span>
+
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Isto não irá funcionar, é claro. Devido ao fato que o singletons possuem
+construtores privados. Nesse momento, temos um conflito entre dois objetivos: um
+é ter apenas uma instância de <strong>Switches</strong> em toda a aplicação e o outro é querermos
+um sistema no qual todas as classes sejam testáveis de forma independente.</p>
+<p>O que poderia ser feito é relaxar a propriedade singleton e alterar o escopo do
+construtor para <strong>public</strong> ou <strong>protected</strong>. Porém, isso realmente depende da
+lógica por trás da necessidade de criar um singleton. Se realmente for
+necessário ter uma classe com instância única, poderíamos fazer da seguinte
+forma:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SwitchesTest</span> <span style="color:#66d9ef">extends</span> Switches <span style="color:#f92672">{</span>
+   <span style="color:#66d9ef">private</span> Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span> switches <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;();</span>
+
+   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">getFeatureState</span><span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> String featureName<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">return</span> switches<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>featureName<span style="color:#f92672">);</span>
+   <span style="color:#f92672">}</span>
+
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Quando fazemos isso podemos preservar parte da propriedade singleton, pois
+usamos uma subclasse de Switches. O que irá prevenir a criação de mais de uma
+instância <strong>Swtiches</strong>, apesar de permitir criar subclasses.</p>
+<p>Em muitos casos, criar uma subclasse e sobrescrever um método pode ser
+suficiente. Outras vezes, as dependências no Singleton são tantas que é
+necessário outras técnicas como por exemplo a criação de interfaces, na qual
+será composta por todos os métodos públicos não-estáticos.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">ISwitches</span> <span style="color:#f92672">{</span>
+   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">getFeatureState</span><span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> String featureName<span style="color:#f92672">);</span>
+   <span style="color:#f92672">...</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Em seguida, faz-se o singleton implementar a interface:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Switches</span> <span style="color:#66d9ef">implements</span> ISwitches <span style="color:#f92672">{</span>
+   <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> ISwitches instance <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+
+   <span style="color:#66d9ef">private</span> <span style="color:#a6e22e">Switches</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>switchState <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">||</span> switchState<span style="color:#f92672">.</span><span style="color:#a6e22e">isEmpty</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+         loadAllFeatureStates<span style="color:#f92672">();</span>
+      <span style="color:#f92672">}</span>
+   <span style="color:#f92672">}</span>
+
+   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> ISwitches <span style="color:#a6e22e">getInstance</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>instance <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+         instance <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Switches<span style="color:#f92672">();</span>
+      <span style="color:#f92672">}</span>
+      <span style="color:#66d9ef">return</span> instance<span style="color:#f92672">;</span>
+   <span style="color:#f92672">}</span>
+
+   <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">getFeatureState</span><span style="color:#f92672">(</span><span style="color:#66d9ef">final</span> String featureName<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      <span style="color:#f92672">...</span>
+   <span style="color:#f92672">}</span>
+
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Logo, ao realizar testes pode-se simplesmente criar classes que implementem a
+interface <strong>ISwitches</strong> e injetá-las nas classes que utilizam o singleton
+original.</p>
+
+  </div>
+
+  <div>
+  <ul class="tags">
+  <li>
+    <a href="http://rpinheiro.dev/tags/singlenton/" class="tag-link">singlenton</a>
+  </li>
+  </ul>
+</div>
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="http://rpinheiro.dev/2017-03-23-como-testar-singletons/"
+     data-text="Como testar Singletons?"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="http://rpinheiro.dev/2017-03-23-como-testar-singletons/"
+     data-text="Como testar Singletons?"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="http://rpinheiro.dev/2017-03-23-como-testar-singletons/"
+     data-text="Como testar Singletons?"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="http://rpinheiro.dev/2017-03-23-como-testar-singletons/"
+     data-text="Como testar Singletons?"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="http://rpinheiro.dev/2017-03-23-como-testar-singletons/"
+     data-text="Como testar Singletons?"><i class="fab fa-pinterest"></i></a>
+</div>
+
+</div>
+
+
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; Rodrigo Pinheiro 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+      &middot; Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+</body>
+</html>

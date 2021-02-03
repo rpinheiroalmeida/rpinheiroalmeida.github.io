@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <title>Lean Software — Aplificando o conhecimento &middot; NullPointer</title>
+
+  <meta name="description" content="Uma breve explanação sobre desenvolvimento de software usando conceitos Lean" />
+
+  
+
+<meta itemprop="name" content="Lean Software — Aplificando o conhecimento">
+<meta itemprop="description" content="Uma breve explanação sobre desenvolvimento de software usando conceitos Lean">
+<meta itemprop="datePublished" content="2017-03-23T22:49:50+00:00" />
+<meta itemprop="dateModified" content="2017-03-23T22:49:50+00:00" />
+<meta itemprop="wordCount" content="546">
+<meta itemprop="image" content="http://rpinheiro.dev/images/profile.png"/>
+
+
+
+<meta itemprop="keywords" content="Lean Software," />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://rpinheiro.dev/images/profile.png"/>
+
+<meta name="twitter:title" content="Lean Software — Aplificando o conhecimento"/>
+<meta name="twitter:description" content="Uma breve explanação sobre desenvolvimento de software usando conceitos Lean"/>
+
+
+<meta property="og:title" content="Lean Software — Aplificando o conhecimento" />
+<meta property="og:description" content="Uma breve explanação sobre desenvolvimento de software usando conceitos Lean" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rpinheiro.dev/2017-03-23-software-lean-amplify-learning/" />
+<meta property="og:image" content="http://rpinheiro.dev/images/profile.png"/>
+<meta property="article:published_time" content="2017-03-23T22:49:50+00:00" />
+<meta property="article:modified_time" content="2017-03-23T22:49:50+00:00" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "http://rpinheiro.dev/#author",
+      "name": "Rodrigo Pinheiro",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "http://rpinheiro.dev/images/profile.png"
+        
+      },
+      "description": "..."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "http://rpinheiro.dev/#website",
+      "url": "http://rpinheiro.dev/",
+      "name": "NullPointer",
+      "description": "...",
+      "publisher": {
+        "@id": "http://rpinheiro.dev/#author"
+      },
+      "inLanguage": ""
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://rpinheiro.dev/images/profile.png",
+      "caption": "NullPointer"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "http://rpinheiro.dev/2017-03-23-software-lean-amplify-learning/#webpage",
+      "url": "http://rpinheiro.dev/2017-03-23-software-lean-amplify-learning/",
+      "name": "Lean Software — Aplificando o conhecimento",
+      "isPartOf": {
+        "@id": "http://rpinheiro.dev/#website"
+      },
+      "about": {
+         "@id": "http://rpinheiro.dev/#author"
+      },
+      "datePublished": "2017-03-23T22:49:50+00:00",
+      "dateModified": "2017-03-23T22:49:50+00:00",
+      "description": "Uma breve explanação sobre desenvolvimento de software usando conceitos Lean",
+      "inLanguage": "",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "http://rpinheiro.dev/2017-03-23-software-lean-amplify-learning/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "http://rpinheiro.dev/2017-03-23-software-lean-amplify-learning/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "http://rpinheiro.dev/2017-03-23-software-lean-amplify-learning/#webpage"
+      },
+      "headline": "Lean Software — Aplificando o conhecimento",
+      "datePublished": "2017-03-23T22:49:50+00:00",
+      "dateModified": "2017-03-23T22:49:50+00:00",
+      "publisher": {
+        "@id": "http://rpinheiro.dev/#author"
+      },
+      "keywords": [
+      ],
+      "articleSection": [
+        "metodologias-ágeis"
+      ],
+      "inLanguage": "",
+      "author": {
+        "@type": "Person",
+        "name": "Rodrigo Pinheiro"
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "http://rpinheiro.dev/2017-03-23-software-lean-amplify-learning/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+        </div>
+        
+      
+
+      <h1>NullPointer</h1>
+
+      
+      <p class="lead">...</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="http://rpinheiro.dev/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/categories/">Categories</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/rpinheiroalmeida/" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/rpinheiroalmeida" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/_rodrigopa_" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">Lean Software — Aplificando o conhecimento</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2017-03-23T22:49:50Z">Mar 23, 2017</time> &middot; 3 min read
+  </div>
+
+  <div>
+  <p>As origens do pensamento Lean vem das linhas de montagens de manufaturamento,
+contudo, nada impede que os mesmos princípios sejam aplicados a outras
+disciplinas. O que não significa, &ldquo;aplicar os mesmos guias ao desenvolvimento
+de software&rdquo;. Pois é sempre bom lembrar que criar bons softwares não é um
+processo de linha de montagem inalterável, pelo contrário, é um processo em
+desenvolvimento, em constante mudança.</p>
+<p>Tendo isso em mente, podemos comparar as principais diferenças entre um processo
+de linha de montagem e um processo de desenvolvimento de software.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Linha de Montagem</th>
+<th style="text-align:center">Desenvolvimento de software</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Qualidade é estar conforme os requisitos</td>
+<td style="text-align:center">Qualidade é um exercício</td>
+</tr>
+<tr>
+<td style="text-align:left">Mudança nos resultados é ruim</td>
+<td style="text-align:center">Mudança nos resultados é algo bom</td>
+</tr>
+<tr>
+<td style="text-align:left">Interações geram castos</td>
+<td style="text-align:center">Iterações geram valor</td>
+</tr>
+</tbody>
+</table>
+<h6 id="mas-o-que-entendemos-por-qualidade-em-desenvolvimento-de-software">Mas o que entendemos por qualidade em desenvolvimento de software?</h6>
+<p>Qualidade em desenvolvimento de software resulta em um sistema que tenha tanto
+integridade percebida como integridade conceitual. Por integridade percebida
+entende-se que na totalidade do produto há um balanço de funcionalidades,
+usabilidade, confiabilidade e economia que são alcançados pelo cliente em um
+software. Já integridade conceitual significa que os conceitos centrais do
+sistema trabalham juntos, de forma coesa.</p>
+<p>Contudo, os clientes só irão perceber a integridade no sistema se ele resolver
+seus problemas de forma fácil e barata. Não importa se o software muda com o
+tempo, desde que ele continue resolvendo os problemas de forma eficiente.</p>
+<p>Portanto, ter o conhecimento do problema do cliente é essencial para se obter
+softwares com qualidade.</p>
+<h6 id="e-por-que-variaçãomudanças-são-boas-em-desenvolvimento-de-software">E por que variação/mudanças são boas em desenvolvimento de software?</h6>
+<p>Um dos motivos pelo qual tornar desenvolvimento de software uma linha de
+montagem (as chamadas &lsquo;fábricas de software&rsquo;) não funcionam de forma eficiente é
+porque as expectativas dos usuários são dinâmicas e requerem mudanças constantes.
+Enquanto uma fábrica de software assume que um produto é homogêneo, sem mudanças,
+onde ter mudanças significa ter gastos, e portanto o objetivo principal de uma
+fábrica de software é fazer qualquer produto da mesma forma.</p>
+<p>Isso fica mais evidente com a criação de padrões para reduzir variações e sempre
+alcançar o mesmo resultado. Contudo, desenvolvimento de software não é reproduzir
+os mesmos resultados repetidas vezes, o desenvolvimento deve reproduzir soluções
+apropriadas para problemas únicos dos clientes.</p>
+<p>Uma das principais vantagens em se ter mudanças é o conhecimento sobre o problema
+que está sempre evoluindo com o problema. O que cria soluções mais precisas uma
+vez que se conhece o problema por diferentes dimensões.</p>
+<h6 id="e-sobre-ter-iterações-curtas-é-o-caminho">E sobre ter iterações curtas é o caminho?</h6>
+<p>Era uma vez que se pensava na ideia de desenvolver software de forma top-down
+era uma boa técnica. Hoje, já se tem por certo que pequenos e repetidos ciclos
+de experimentação e checagem de resultados funciona bem.</p>
+<p>Tem que se ter em mente que o objetivo não é resolver o problema do cliente de
+uma primeira vez, até porque o conhecimento que se tem não é suficiente para se
+ter a melhor solução. Portanto, ao se tentar e falhar cria-se conteúdos e
+aprendizagem sobre o problema que evoluem de acordo com as mudanças no problema.</p>
+<p>Em suma, essas três características (qualidade do software ser um exercício
+constante, mudanças nos resultados e iterações) de um processo de
+desenvolvimento de software tem como objetivo ampliar e compartilhar o
+conhecimento que se tem sobre o cliente/usuários e seus problemas.</p>
+
+  </div>
+
+  <div>
+  <ul class="tags"></ul>
+</div>
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="http://rpinheiro.dev/2017-03-23-software-lean-amplify-learning/"
+     data-text="Lean Software — Aplificando o conhecimento"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="http://rpinheiro.dev/2017-03-23-software-lean-amplify-learning/"
+     data-text="Lean Software — Aplificando o conhecimento"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="http://rpinheiro.dev/2017-03-23-software-lean-amplify-learning/"
+     data-text="Lean Software — Aplificando o conhecimento"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="http://rpinheiro.dev/2017-03-23-software-lean-amplify-learning/"
+     data-text="Lean Software — Aplificando o conhecimento"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="http://rpinheiro.dev/2017-03-23-software-lean-amplify-learning/"
+     data-text="Lean Software — Aplificando o conhecimento"><i class="fab fa-pinterest"></i></a>
+</div>
+
+</div>
+
+
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; Rodrigo Pinheiro 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+      &middot; Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <title>Como modelar microservice? &middot; NullPointer</title>
+
+  <meta name="description" content="Aprendizagens do primeiro projeto utilizando uma arquitetura de microservices" />
+
+  
+
+<meta itemprop="name" content="Como modelar microservice?">
+<meta itemprop="description" content="Aprendizagens do primeiro projeto utilizando uma arquitetura de microservices">
+<meta itemprop="datePublished" content="2017-03-22T22:49:50+00:00" />
+<meta itemprop="dateModified" content="2017-03-22T22:49:50+00:00" />
+<meta itemprop="wordCount" content="630">
+<meta itemprop="image" content="http://rpinheiro.dev/images/profile.png"/>
+
+
+
+<meta itemprop="keywords" content="microservices,legacy,code," />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://rpinheiro.dev/images/profile.png"/>
+
+<meta name="twitter:title" content="Como modelar microservice?"/>
+<meta name="twitter:description" content="Aprendizagens do primeiro projeto utilizando uma arquitetura de microservices"/>
+
+
+<meta property="og:title" content="Como modelar microservice?" />
+<meta property="og:description" content="Aprendizagens do primeiro projeto utilizando uma arquitetura de microservices" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rpinheiro.dev/2017-03-29-how-to-model-service/" />
+<meta property="og:image" content="http://rpinheiro.dev/images/profile.png"/>
+<meta property="article:published_time" content="2017-03-22T22:49:50+00:00" />
+<meta property="article:modified_time" content="2017-03-22T22:49:50+00:00" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "http://rpinheiro.dev/#author",
+      "name": "Rodrigo Pinheiro",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "http://rpinheiro.dev/images/profile.png"
+        
+      },
+      "description": "..."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "http://rpinheiro.dev/#website",
+      "url": "http://rpinheiro.dev/",
+      "name": "NullPointer",
+      "description": "...",
+      "publisher": {
+        "@id": "http://rpinheiro.dev/#author"
+      },
+      "inLanguage": ""
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://rpinheiro.dev/images/profile.png",
+      "caption": "NullPointer"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "http://rpinheiro.dev/2017-03-29-how-to-model-service/#webpage",
+      "url": "http://rpinheiro.dev/2017-03-29-how-to-model-service/",
+      "name": "Como modelar microservice?",
+      "isPartOf": {
+        "@id": "http://rpinheiro.dev/#website"
+      },
+      "about": {
+         "@id": "http://rpinheiro.dev/#author"
+      },
+      "datePublished": "2017-03-22T22:49:50+00:00",
+      "dateModified": "2017-03-22T22:49:50+00:00",
+      "description": "Aprendizagens do primeiro projeto utilizando uma arquitetura de microservices",
+      "inLanguage": "",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "http://rpinheiro.dev/2017-03-29-how-to-model-service/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "http://rpinheiro.dev/2017-03-29-how-to-model-service/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "http://rpinheiro.dev/2017-03-29-how-to-model-service/#webpage"
+      },
+      "headline": "Como modelar microservice?",
+      "datePublished": "2017-03-22T22:49:50+00:00",
+      "dateModified": "2017-03-22T22:49:50+00:00",
+      "publisher": {
+        "@id": "http://rpinheiro.dev/#author"
+      },
+      "keywords": [
+        "microservices",
+        "legacy",
+        "code"
+      ],
+      "articleSection": [
+        "microservices",
+        "arquitetura"
+      ],
+      "inLanguage": "",
+      "author": {
+        "@type": "Person",
+        "name": "Rodrigo Pinheiro"
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "http://rpinheiro.dev/2017-03-29-how-to-model-service/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+        </div>
+        
+      
+
+      <h1>NullPointer</h1>
+
+      
+      <p class="lead">...</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="http://rpinheiro.dev/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/categories/">Categories</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/rpinheiroalmeida/" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/rpinheiroalmeida" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/_rodrigopa_" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">Como modelar microservice?</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2017-03-22T22:49:50Z">Mar 22, 2017</time> &middot; 3 min read
+  </div>
+
+  <div>
+  <h5 id="contexto">Contexto</h5>
+<p>O sistema atual no qual estou trabalhando consite de um monolítico para o
+domínio de e-commerce e integrações com outros sistemas via bibliotecas. Como
+pode ser visto na Figura 1, além da lógica de negócio que está na plataforma de
+e-commerce, temos diversos clientes <em>jar</em> que tem o objetivo de realizarem a
+comunicação com sistemas de terceiros, que por sua vez realizarão tarefas como
+gerenciamento de promoções, criações de ordem, cálculos de taxas e entre outras.</p>
+<p><img src="/images/how-to-model-service-Figure01.jpg" alt="model-microservice" title="How to model a service"></p>
+<p>Recentemente, tivemos a solicitação do cliente de substituir o
+promotion-client.jar por um microserviço. Esse jar, expõe uma interface de
+comunicação, envia uma requisição para o sistema de promoções, converte a
+resposta e passa os dados para a plataforma de e-commerce.</p>
+<h5 id="o-que-faz-um-bom-microserviço">O que faz um bom microserviço?</h5>
+<p>Ao iniciar o desenvolvimento nos perguntamos se o que estávamos fazendo tinha
+algum sentido, ou algum valor para o cliente. Além disso, surgiu perguntas tais
+como:</p>
+<blockquote>
+<p>O que faz um microserviço ser bom?</p>
+</blockquote>
+<p>Depois de algumas leituras e pesquisas no estado da arte, encontramos uma boa
+definição no livro de (<a href="https://www.amazon.com/Building-Microservices-Designing-Fine-Grained-Systems/dp/1491950358/ref=s9_simh_gw_g14_i5_r?_encoding=UTF8&amp;fpl=fresh&amp;pf_rd_m=ATVPDKIKX0DER&amp;pf_rd_s=&amp;pf_rd_r=67VPD6EW255AWZT0BMBQ&amp;pf_rd_t=36701&amp;pf_rd_p=a6aaf593-1ba4-4f4e-bdcc-0febe090b8ed&amp;pf_rd_i=desktop">Sam Newman - Building Microservices</a>).
+Ele define duas propriedades essenciais que bons microserviços devem ter: fraco
+acoplamento e alta coesão.</p>
+<p>Quem é do mundo de Orientação a Objeto conhece bem esses termos e sabe que eles
+são essenciais para a construção de um bom design OO. Mas não custa nada
+refrescar nossa memória:</p>
+<blockquote>
+<p>Acoplamento (coupling) é o grau de conhecimento que um componente tem do outro.
+Portanto, baixo acoplamento (loose coupling) significa reduzir as dependências
+de um componente em relação a outro.</p>
+</blockquote>
+<blockquote>
+<p>Coesão é o grau no qual os elementos de um certo componente trabalham juntos
+para alcançar um objetivo. Portanto, alta coesão (high cohesion) os elementos de
+um módulo estão intimamente ligados entre si e estão ligados por um objetivo
+comum.</p>
+</blockquote>
+<p>Diferenciando melhor os conceitos eu diria que acomplamento é uma medida &ldquo;inter&rdquo;
+componentes, e coesão é uma medida &ldquo;intra&rdquo; componentes.</p>
+<p>Voltando para o mundo do microserviço&hellip;</p>
+<p>Quando um microserviço possui baixo acoplamento, uma mudança nele não deve afetar
+a mudança em outros serviços. Já em microserviços com alta coesão é necessária porque
+queremos ter os comportamentos relacionados juntos, pois traz a grande vantagem
+de ter apenas um único ponto de mudança. Contudo, ter um microserviço coeso
+significa encontrar as fronteiras dentro do domínio de negócio que assegura os
+comportamentos relacionados em apenas um lugar e a comunicação com outros
+domínios seja a menor possível.</p>
+<p>No nosso serviço de promoções, apesar de termos um baixo acoplamento, pois ele
+tem como dependência apenas um outro sistema externo (Sistema de gerenciamento
+de promoções), ele não tinha alta coesão, pois muita lógica relacionada ao
+domínio de promoções não estava implementada dentro do microserviço e sim da
+plataforma de e-commerce, resultando em um serviço anêmico com poucos benefícios
+para o cliente.</p>
+<h5 id="descobrindo-as-fronteiras">Descobrindo as fronteiras</h5>
+<p>Ao meu ver, conseguir um baixo acoplamento é mais simples do que conseguir uma
+alta coesão, e o motivo é porque definir as fronteiras de um serviço sempre é
+algo complicado de se fazer.</p>
+<p>A ideia é que um domínio consiste de vários contextos, por exemplo, para o
+domínio de e-commerce temos o contexto de promoção, checkout de um produto,
+criação de uma ordem e por aí vai. E dentro de cada contexto temos módulos que
+não precisam se comunicar com o mundo externo assim como partes que precisam.</p>
+<p>Um bom ponto inicial para definir as fronteiras de um microserviço seria
+identificar os módulos que o compõe e verificar o grau de exposição. A tendência
+é que cada módulo transforme-se em um microserviço.</p>
+<p>Uma outra estratégia seria pensar no contexto a partir dos dados existentes na
+organização. Contudo, acredito que pensar sobre as funcionalidades que esses
+dados abastecem seja mais eficiente.</p>
+<p>Logo, a melhor estratégia ao iniciar com microserviços é conhecer bem o domínio
+do cliente.</p>
+
+  </div>
+
+  <div>
+  <ul class="tags">
+  <li>
+    <a href="http://rpinheiro.dev/tags/microservices/" class="tag-link">microservices</a>
+  </li>
+  
+  <li>
+    <a href="http://rpinheiro.dev/tags/legacy/" class="tag-link">legacy</a>
+  </li>
+  
+  <li>
+    <a href="http://rpinheiro.dev/tags/code/" class="tag-link">code</a>
+  </li>
+  </ul>
+</div>
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="http://rpinheiro.dev/2017-03-29-how-to-model-service/"
+     data-text="Como modelar microservice?"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="http://rpinheiro.dev/2017-03-29-how-to-model-service/"
+     data-text="Como modelar microservice?"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="http://rpinheiro.dev/2017-03-29-how-to-model-service/"
+     data-text="Como modelar microservice?"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="http://rpinheiro.dev/2017-03-29-how-to-model-service/"
+     data-text="Como modelar microservice?"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="http://rpinheiro.dev/2017-03-29-how-to-model-service/"
+     data-text="Como modelar microservice?"><i class="fab fa-pinterest"></i></a>
+</div>
+
+</div>
+
+
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; Rodrigo Pinheiro 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+      &middot; Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+</body>
+</html>

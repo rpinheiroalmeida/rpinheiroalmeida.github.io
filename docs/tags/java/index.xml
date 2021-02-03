@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on NullPointer</title>
+    <link>http://rpinheiro.dev/tags/java/</link>
+    <description>Recent content in Java on NullPointer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 01 May 2019 18:00:50 +0000</lastBuildDate><atom:link href="http://rpinheiro.dev/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Usando Toggles com Togglz e Spring Boot</title>
+      <link>http://rpinheiro.dev/2019-05-01-feature-toggle-manager/</link>
+      <pubDate>Wed, 01 May 2019 18:00:50 +0000</pubDate>
+      
+      <guid>http://rpinheiro.dev/2019-05-01-feature-toggle-manager/</guid>
+      <description>1.Introdução Nossa aplicação está crescendo, queremos ter um controle maior do envio de novas funcionalidades para produção, fazer um roolback rápido de uma funcionalidade caso não esteja funcionando de acordo, realizar testes A/B de novas funcionalidades, realizar testes em produção de forma controlada e segura, habilitar fluxos distintos caso uma funcionalidade X seja utilizada pelo cliente Y ou Z.</description>
+    </item>
+    
+    <item>
+      <title>Objetos Seam - O que são, por que usá-los e quando</title>
+      <link>http://rpinheiro.dev/2017-03-23-objects-seam/</link>
+      <pubDate>Thu, 23 Mar 2017 02:13:50 +0000</pubDate>
+      
+      <guid>http://rpinheiro.dev/2017-03-23-objects-seam/</guid>
+      <description>Quando se trabalha com código legado e tenta escrever testes de unidade para uma classe repleta de dependências, percebe-se a dificuldade e o quão bom o código está ou não.</description>
+    </item>
+    
+  </channel>
+</rss>

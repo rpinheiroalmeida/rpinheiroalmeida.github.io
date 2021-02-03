@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Agile on NullPointer</title>
+    <link>http://rpinheiro.dev/tags/agile/</link>
+    <description>Recent content in Agile on NullPointer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 16 Jan 2018 22:22:50 +0000</lastBuildDate><atom:link href="http://rpinheiro.dev/tags/agile/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Agile transformation my first experience</title>
+      <link>http://rpinheiro.dev/2017-10-02-software-transformation/</link>
+      <pubDate>Tue, 16 Jan 2018 22:22:50 +0000</pubDate>
+      
+      <guid>http://rpinheiro.dev/2017-10-02-software-transformation/</guid>
+      <description>Although, for contractual reason I cannot say our client’s name. There are some interests facts I can talk, as:</description>
+    </item>
+    
+  </channel>
+</rss>

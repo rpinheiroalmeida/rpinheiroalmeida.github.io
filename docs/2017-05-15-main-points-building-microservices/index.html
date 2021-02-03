@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <title>Main Points - Building Microservices &middot; NullPointer</title>
+
+  <meta name="description" content="Principais pontos observados depois da leitura do livro Building Microservices" />
+
+  
+
+<meta itemprop="name" content="Main Points - Building Microservices">
+<meta itemprop="description" content="Principais pontos observados depois da leitura do livro Building Microservices">
+<meta itemprop="datePublished" content="2017-05-15T02:13:50+00:00" />
+<meta itemprop="dateModified" content="2017-05-15T02:13:50+00:00" />
+<meta itemprop="wordCount" content="1331">
+<meta itemprop="image" content="http://rpinheiro.dev/images/profile.png"/>
+
+
+
+<meta itemprop="keywords" content="microservices," />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://rpinheiro.dev/images/profile.png"/>
+
+<meta name="twitter:title" content="Main Points - Building Microservices"/>
+<meta name="twitter:description" content="Principais pontos observados depois da leitura do livro Building Microservices"/>
+
+
+<meta property="og:title" content="Main Points - Building Microservices" />
+<meta property="og:description" content="Principais pontos observados depois da leitura do livro Building Microservices" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rpinheiro.dev/2017-05-15-main-points-building-microservices/" />
+<meta property="og:image" content="http://rpinheiro.dev/images/profile.png"/>
+<meta property="article:published_time" content="2017-05-15T02:13:50+00:00" />
+<meta property="article:modified_time" content="2017-05-15T02:13:50+00:00" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "http://rpinheiro.dev/#author",
+      "name": "Rodrigo Pinheiro",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "http://rpinheiro.dev/images/profile.png"
+        
+      },
+      "description": "..."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "http://rpinheiro.dev/#website",
+      "url": "http://rpinheiro.dev/",
+      "name": "NullPointer",
+      "description": "...",
+      "publisher": {
+        "@id": "http://rpinheiro.dev/#author"
+      },
+      "inLanguage": ""
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://rpinheiro.dev/images/profile.png",
+      "caption": "NullPointer"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "http://rpinheiro.dev/2017-05-15-main-points-building-microservices/#webpage",
+      "url": "http://rpinheiro.dev/2017-05-15-main-points-building-microservices/",
+      "name": "Main Points - Building Microservices",
+      "isPartOf": {
+        "@id": "http://rpinheiro.dev/#website"
+      },
+      "about": {
+         "@id": "http://rpinheiro.dev/#author"
+      },
+      "datePublished": "2017-05-15T02:13:50+00:00",
+      "dateModified": "2017-05-15T02:13:50+00:00",
+      "description": "Principais pontos observados depois da leitura do livro Building Microservices",
+      "inLanguage": "",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "http://rpinheiro.dev/2017-05-15-main-points-building-microservices/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "http://rpinheiro.dev/2017-05-15-main-points-building-microservices/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "http://rpinheiro.dev/2017-05-15-main-points-building-microservices/#webpage"
+      },
+      "headline": "Main Points - Building Microservices",
+      "datePublished": "2017-05-15T02:13:50+00:00",
+      "dateModified": "2017-05-15T02:13:50+00:00",
+      "publisher": {
+        "@id": "http://rpinheiro.dev/#author"
+      },
+      "keywords": [
+        "microservices"
+      ],
+      "articleSection": [
+        "microservices",
+        "resenhas"
+      ],
+      "inLanguage": "",
+      "author": {
+        "@type": "Person",
+        "name": "Rodrigo Pinheiro"
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "http://rpinheiro.dev/2017-05-15-main-points-building-microservices/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+        </div>
+        
+      
+
+      <h1>NullPointer</h1>
+
+      
+      <p class="lead">...</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="http://rpinheiro.dev/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/categories/">Categories</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/rpinheiroalmeida/" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/rpinheiroalmeida" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/_rodrigopa_" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">Main Points - Building Microservices</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2017-05-15T02:13:50Z">May 15, 2017</time> &middot; 7 min read
+  </div>
+
+  <div>
+  <!-- raw HTML omitted -->
+<p>Following some important topics extracts from my reading of the book (<a href="https://www.amazon.com/Building-Microservices-Designing-Fine-Grained-Systems/dp/1491950358/ref=s9_simh_gw_g14_i5_r?_encoding=UTF8&amp;fpl=fresh&amp;pf_rd_m=ATVPDKIKX0DER&amp;pf_rd_s=&amp;pf_rd_r=67VPD6EW255AWZT0BMBQ&amp;pf_rd_t=36701&amp;pf_rd_p=a6aaf593-1ba4-4f4e-bdcc-0febe090b8ed&amp;pf_rd_i=desktop">Building Microservices</a>).</p>
+<h6 id="chapter-1---microservices">Chapter 1 - Microservices</h6>
+<ul>
+<li>Microservices are small, autonomus services that work together;</li>
+<li>Microservices should follow <a href="https://en.wikipedia.org/wiki/Single_responsibility_principle">Single Responsability Principle</a>;</li>
+<li>We need think about what our services should expose.</li>
+</ul>
+<h6 id="chapter-2---the-evolutionaty-architect">Chapter 2 - The Evolutionaty Architect</h6>
+<ul>
+<li>Defining clear attributes that each service should have is one way of being
+clear as to where to balance sits;</li>
+<li>I would suggest ensuring that all services emit health and generate monitoring
+related metrics in the same way;</li>
+<li>Governance: ensure that the system being implemented fits tecnical vision.</li>
+</ul>
+<h6 id="chapter-3---how-to-model-services">Chapter 3 - How to model Services</h6>
+<ul>
+<li>What makes a good service?
+<ul>
+<li>Loose coupling</li>
+<li>High cohesion</li>
+</ul>
+</li>
+<li>Limit the number of different types of calls.</li>
+<li>Each bounded context has an explicit interface, where it decides what modelos
+to share with others contexts.</li>
+<li>If our service boundaries align to the bounded contexts in our domain, and our
+microservices represent those bounded contexts, we are off to an excellent start
+in ensuring that our microservices are loosey coupled and strongly cohesive</li>
+<li>Prematurely decomposing a system into microservices can be costly, especially if
+you are new to the domain.</li>
+<li>When you start to think about the bounded contexts that exists in your
+organization, you should be thinking not in terms of data shared, but about
+capabilities those contexts provide the rest of the domain.</li>
+<li>These capabilities become the key operations that will be exposed over the wire
+to other collaboratoes.</li>
+</ul>
+<h6 id="chapter-4---integration">Chapter 4 - Integration</h6>
+<ul>
+<li>
+<p>Keep your APIs tecnology agnostics.</p>
+</li>
+<li>
+<p>Orchestration</p>
+<ul>
+<li>Guide and drive (Put image)</li>
+</ul>
+<!-- raw HTML omitted -->
+</li>
+<li>
+<p>Choreography</p>
+<ul>
+<li>Each part does its jobs</li>
+</ul>
+</li>
+<li>
+<p>Normally, Orchestration result in a small number of smart &ldquo;God&rdquo; services
+telling anemic CRUD-based services what to do.</p>
+</li>
+<li>
+<p>In general, I have found that system that tend more toward the choreographed
+approach are more loosey coupled, and are more flexible and amenable to change.</p>
+</li>
+<li>
+<p>In Choreography, each service is smart enough to understand its role in the
+whole dance.</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>To delay the implementation of proper persistence for the microservice, until
+the interface had stabilized enough.</li>
+<li>Dry (Don&rsquo;t repeat yourself)
+<ul>
+<li>Don&rsquo;t violate DRY within a microservice, but be relaxed about violationg
+DRY across all service.</li>
+</ul>
+</li>
+<li>Client libraries should e made by the clients. The client is in charge of When
+upgrade happens.</li>
+<li>Sometimes the use of memory is good enough, others time you need to know if it
+has changed. So whether you decide to pass around a memory of what an entity once
+looked like, make sure you also include reference to the original resource so
+that the new state can be retrieved.</li>
+<li>Postel&rsquo;s Law
+<ul>
+<li>Be conservative in what you do, be liberal in what you accept from others.</li>
+</ul>
+</li>
+<li>UI Fragment composition
+<ul>
+<li>One of the key advantages of this approach is that the same team makes changes
+to the services can be also in charge of making to those parts of the UI.</li>
+<li>Problem with this approach
+<ul>
+<li>Ensuring consistency of the user experience. Users want to have a seamless
+experience, not to feel that different parts of the interface work in
+different ways, or present a different design language.</li>
+<li>Native applications or thick clients could be hard to do.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="chapter-5---splitting-the-monolith">Chapter 5 - Splitting the Monolith</h6>
+<ul>
+<li>Our code should represent our organization, so our package representing the
+bounded context in our organization should interact in the same way the real-life
+organizational group in our domain interact.</li>
+<li>An incremental approach will help you learn about microservices as you go, and
+will also limit the impact of getting wrong.</li>
+<li>Multiple service per host can also inhibit autonomy of teams. If services for
+different teams are installed on the same host, who gets to configure the host for
+their services? In all likelihood this ends up getting handled by a centralized
+team, meaning it takes more coordination to get services deployed.</li>
+<li>Having a single-service-per-host model is significantly  easier to reason about
+can help reduce complexity. If you can&rsquo;t embrace this model yet, I won&rsquo;t say
+microservices aren&rsquo;t for you.</li>
+</ul>
+<h6 id="chapter-7---testing">Chapter 7 - Testing</h6>
+<ul>
+<li>If you currently carry out large amounts of manual testing. I would suggest you
+address that before proceeding too far down the path of microservices, as you
+won&rsquo;t get many of their benefits proceeding too far down the path of microservices,
+as you won&rsquo;t get many of theirs benefits if you are unable to validate your
+software quickly and efficiently.</li>
+<li>When we detect flaky tests, it is essential that we do our best to remove them.
+Otherwise, we start to lose faith in a test suite that &ldquo;always fails like that&rdquo;.
+A test suite with flaky tests can become a victim of what Diane Vaughan calls
+<strong>the normalization of deviance</strong> - the idea that over time we can become so
+accustomed to do things being wrong that we start to accept them as being normal
+and not a problem. This is very human tendency means we need to find and eliminate
+these tests as soon as we can before we start to assume that failings tests are
+OK.</li>
+<li>Organizations react by having a dedicated team write these tests. This can be
+disastrous. The team developing the software becomes increasingly distant from
+the tests for its code. Cycle times increase, as service owners end up waiting
+for the test team to write end-to-end tests for the functionality they just wrote.
+Because another team writes these tests, the team that wrote the service is less
+involved with, and therefore less likely to know, how to run and fix these tests.</li>
+</ul>
+<h6 id="chapter-12---bringing-it-all-together">Chapter 12 - Bringing It All together</h6>
+<p>The main principles of Microservices are:</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>Model Around Business Concepts
+<ul>
+<li>Use <strong>bounded contexts</strong> to define potential domain boundaries.</li>
+</ul>
+</li>
+<li>Adopt a Culture of Automation
+<ul>
+<li>Microservices add a lot of complexity, a key part of which comes from the
+sheer number of movings parts we have to deal with. Embracing culture of
+automation is one way to address this.</li>
+<li>Automated testing is essential, as ensuring our services still work.</li>
+<li>Having uniform command-line call to deploy the same way everywhere can help.</li>
+</ul>
+</li>
+<li>Hide Internal Implementation Details
+<ul>
+<li>To maximize the ability of one service to evolve independently of any others,
+it is vital that we hide implementation details.</li>
+<li>Modeling <strong>bounded contexts</strong> can help.</li>
+<li>Services should hide their databases to avoid falling into one of the most
+common sorts of coupling.</li>
+<li>Pick <strong>tecnology-agnostic</strong> APIs to give you freedom to use different
+technologies stacks.</li>
+</ul>
+</li>
+<li>Decentralize All the Things
+<ul>
+<li>Embracing <strong>self-service</strong> wherever possible, allowing people to deploy
+software on demand, making development and testing as easy as possible, and
+avoiding the need for separate teams to perform these activities.</li>
+<li>Avoid approaches like enterprise service bus or orchestration systems, which
+can lead to centralization of business logic and dumb services.</li>
+<li>Prefer choreography over orchestration and dumb middleware, with smart
+endpoints to ensure that you keep associated logic and data within service
+boundaries, helping keep things cohesive.</li>
+</ul>
+</li>
+<li>Independently Deployable
+<ul>
+<li>We should always strive to ensure that our microservices can and are deployed
+by themselves.</li>
+<li>We should seek to coexist versioned endpoints to allow our consumers to change
+over time.</li>
+<li>By adopting a <strong>one-service-per-host</strong> model, you reduce side effects that
+could cause deploying one service to impact another unrelated service.</li>
+<li>Consider using <strong>blue/green or canary</strong> release techniques to separate
+deployment from release, reducing the risk of release going wrong.</li>
+<li>Use <strong>consumer-driven contracts</strong> to catch breaking changes before they happen.</li>
+<li>Your <strong>consumers should decide when they update themselves</strong>, and you need
+to accommodate this.</li>
+</ul>
+</li>
+<li>Isolate Failure
+<ul>
+<li>When using network calls, don&rsquo;t treat remote calls like local calls, as this
+will hide different sorts of failures mode.</li>
+<li>Make sure <strong>timeouts</strong> are set appropriately.</li>
+<li>Understand when and how to use <strong>bulkheads</strong> and <strong>circuit breakers</strong> to
+limit the fallout of a failing component.</li>
+</ul>
+</li>
+<li>Highly Observable
+<ul>
+<li>Use <strong>semantic monitoring</strong> to see if your system is behaving correctly, by
+injecting <strong>synthetic transactions</strong> into your system to simulate real-user
+behavior</li>
+<li><strong>Aggregate your logs</strong>, and <strong>aggregate your stats</strong>, so that when you see
+a problem you can drill down to the source.</li>
+<li>Use <strong>correlation IDs</strong> to allow you to create call through the system.</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+
+  <div>
+  <ul class="tags">
+  <li>
+    <a href="http://rpinheiro.dev/tags/microservices/" class="tag-link">microservices</a>
+  </li>
+  </ul>
+</div>
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="http://rpinheiro.dev/2017-05-15-main-points-building-microservices/"
+     data-text="Main Points - Building Microservices"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="http://rpinheiro.dev/2017-05-15-main-points-building-microservices/"
+     data-text="Main Points - Building Microservices"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="http://rpinheiro.dev/2017-05-15-main-points-building-microservices/"
+     data-text="Main Points - Building Microservices"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="http://rpinheiro.dev/2017-05-15-main-points-building-microservices/"
+     data-text="Main Points - Building Microservices"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="http://rpinheiro.dev/2017-05-15-main-points-building-microservices/"
+     data-text="Main Points - Building Microservices"><i class="fab fa-pinterest"></i></a>
+</div>
+
+</div>
+
+
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; Rodrigo Pinheiro 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+      &middot; Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+</body>
+</html>

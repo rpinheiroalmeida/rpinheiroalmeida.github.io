@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <title>O que são microserviços? &middot; NullPointer</title>
+
+  <meta name="description" content="O que se entende por microserviço na literatura atual? Será que o que temos em mente está correto." />
+
+  
+
+<meta itemprop="name" content="O que são microserviços?">
+<meta itemprop="description" content="O que se entende por microserviço na literatura atual? Será que o que temos em mente está correto.">
+<meta itemprop="datePublished" content="2017-03-22T22:49:50+00:00" />
+<meta itemprop="dateModified" content="2017-03-22T22:49:50+00:00" />
+<meta itemprop="wordCount" content="250">
+<meta itemprop="image" content="http://rpinheiro.dev/images/profile.png"/>
+
+
+
+<meta itemprop="keywords" content="microservices," />
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://rpinheiro.dev/images/profile.png"/>
+
+<meta name="twitter:title" content="O que são microserviços?"/>
+<meta name="twitter:description" content="O que se entende por microserviço na literatura atual? Será que o que temos em mente está correto."/>
+
+
+<meta property="og:title" content="O que são microserviços?" />
+<meta property="og:description" content="O que se entende por microserviço na literatura atual? Será que o que temos em mente está correto." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rpinheiro.dev/2017-03-22-what-are-microservices/" />
+<meta property="og:image" content="http://rpinheiro.dev/images/profile.png"/>
+<meta property="article:published_time" content="2017-03-22T22:49:50+00:00" />
+<meta property="article:modified_time" content="2017-03-22T22:49:50+00:00" />
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "http://rpinheiro.dev/#author",
+      "name": "Rodrigo Pinheiro",
+      "image": {
+        "@type":"ImageObject",
+        
+        "url": "http://rpinheiro.dev/images/profile.png"
+        
+      },
+      "description": "..."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "http://rpinheiro.dev/#website",
+      "url": "http://rpinheiro.dev/",
+      "name": "NullPointer",
+      "description": "...",
+      "publisher": {
+        "@id": "http://rpinheiro.dev/#author"
+      },
+      "inLanguage": ""
+    },
+    {
+      "@type": "ImageObject",
+      "url": "http://rpinheiro.dev/images/profile.png",
+      "caption": "NullPointer"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "http://rpinheiro.dev/2017-03-22-what-are-microservices/#webpage",
+      "url": "http://rpinheiro.dev/2017-03-22-what-are-microservices/",
+      "name": "O que são microserviços?",
+      "isPartOf": {
+        "@id": "http://rpinheiro.dev/#website"
+      },
+      "about": {
+         "@id": "http://rpinheiro.dev/#author"
+      },
+      "datePublished": "2017-03-22T22:49:50+00:00",
+      "dateModified": "2017-03-22T22:49:50+00:00",
+      "description": "O que se entende por microserviço na literatura atual? Será que o que temos em mente está correto.",
+      "inLanguage": "",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "http://rpinheiro.dev/2017-03-22-what-are-microservices/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "http://rpinheiro.dev/2017-03-22-what-are-microservices/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "http://rpinheiro.dev/2017-03-22-what-are-microservices/#webpage"
+      },
+      "headline": "O que são microserviços?",
+      "datePublished": "2017-03-22T22:49:50+00:00",
+      "dateModified": "2017-03-22T22:49:50+00:00",
+      "publisher": {
+        "@id": "http://rpinheiro.dev/#author"
+      },
+      "keywords": [
+        "microservices"
+      ],
+      "articleSection": [
+        "microservices",
+        "resenhas",
+        "arquiteturas"
+      ],
+      "inLanguage": "",
+      "author": {
+        "@type": "Person",
+        "name": "Rodrigo Pinheiro"
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "http://rpinheiro.dev/2017-03-22-what-are-microservices/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+        <div class="author-image">
+          <img src="/images/profile.png" class="img-circle img-headshot center" alt="Profile Picture">
+        </div>
+        
+      
+
+      <h1>NullPointer</h1>
+
+      
+      <p class="lead">...</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="http://rpinheiro.dev/">Home</a>
+        </li>
+        <li>
+          <a href="/posts/">Posts</a>
+        </li><li>
+          <a href="/categories/">Categories</a>
+        </li><li>
+          <a href="/tags/">Tags</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+      <a href="https://www.linkedin.com/in/rpinheiroalmeida/" rel="me" title="Linkedin" target="_blank">
+        <i class="fab fa-linkedin" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://github.com/rpinheiroalmeida" rel="me" title="GitHub" target="_blank">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      
+      <a href="https://twitter.com/_rodrigopa_" rel="me" title="Twitter" target="_blank">
+        <i class="fab fa-twitter" aria-hidden="true"></i>
+      </a>
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">O que são microserviços?</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2017-03-22T22:49:50Z">Mar 22, 2017</time> &middot; 2 min read
+  </div>
+
+  <div>
+  <p>De acordo com Sam Newman (<a href="https://www.amazon.com/Building-Microservices-Designing-Fine-Grained-Systems/dp/1491950358/ref=s9_simh_gw_g14_i5_r?_encoding=UTF8&amp;fpl=fresh&amp;pf_rd_m=ATVPDKIKX0DER&amp;pf_rd_s=&amp;pf_rd_r=67VPD6EW255AWZT0BMBQ&amp;pf_rd_t=36701&amp;pf_rd_p=a6aaf593-1ba4-4f4e-bdcc-0febe090b8ed&amp;pf_rd_i=desktop">Building Microservices</a>)
+microservices são pequenos e autônomos serviços trabalhando juntos.</p>
+<p>Contudo, o quanto pequeno pode ser um serviço? Pelo número de linhas de código é
+problemático, uma vez que algumas linguagens de programação são mais expressivas
+que outras. Além disso, há alguns modelos de negócio que são naturalmente mais
+complexos.</p>
+<p>Um fator relevante a ser considerado é definir o tamanho de &lsquo;pequeno&rsquo; pelo tamanho
+do time. Se a base de código é grande o suficiente para ser gerenciada por um
+time, é um bom sinal de que o microseriço está grande.</p>
+<p>Uma outra variável a se pensar no tamanho do microserviço é sempre ter em mente
+o seguinte trade-off: quanto menor o microserviço, maiores serão os benefícios
+acerca da interdependência e manutenção, porém maiores serão as complexidades
+que surgirão com comunicação e gerenciamento das dependências.</p>
+<p>Uma outra característica de um microserviço é ser autônomo, ou seja, ser uma
+entidade separada, possível de ser deployada em uma plataforma (PAAS) ou mesmo
+em uma máquina sem precisar/afetar qualquer outra dependência.</p>
+<p>Isso nos faz pensar sobre o que o nosso serviço deve export e o que eles devem
+executar. Se há muita informação sendo compartilhada, ou consumida, gerará um
+acoplamento forte diminuindo a autonomia do microserviço.</p>
+<p>Para saber o quanto o seu microserviço está desacoplado, faça a seguinte pergunta:
+você pode mudar o seu serviço e realizar deploy sem precisar mudar qualquer outro
+sistema ou dependência? Se a resposta é não, então avalie os limites do seu
+microserviço.</p>
+
+  </div>
+
+  <div>
+  <ul class="tags">
+  <li>
+    <a href="http://rpinheiro.dev/tags/microservices/" class="tag-link">microservices</a>
+  </li>
+  </ul>
+</div>
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="http://rpinheiro.dev/2017-03-22-what-are-microservices/"
+     data-text="O que são microserviços?"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="http://rpinheiro.dev/2017-03-22-what-are-microservices/"
+     data-text="O que são microserviços?"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="http://rpinheiro.dev/2017-03-22-what-are-microservices/"
+     data-text="O que são microserviços?"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="http://rpinheiro.dev/2017-03-22-what-are-microservices/"
+     data-text="O que são microserviços?"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="http://rpinheiro.dev/2017-03-22-what-are-microservices/"
+     data-text="O que são microserviços?"><i class="fab fa-pinterest"></i></a>
+</div>
+
+</div>
+
+
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy; Rodrigo Pinheiro 2021
+
+      &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0" target="_blank">CC BY-SA 4.0</a>
+
+      &middot; Build with <a href="https://gohugo.io/" target="_blank">Hugo</a> & <a href="https://themes.gohugo.io/soho/" target="_blank">Soho</a> theme
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="/js/jquery.min.js"></script>
+  <script src="/js/soho.js"></script>
+
+  
+
+  
+</body>
+</html>

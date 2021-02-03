@@ -8,10 +8,10 @@
     <lastBuildDate>Tue, 02 Feb 2021 02:13:50 +0000</lastBuildDate><atom:link href="http://rpinheiro.dev/tags/covid19/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Relatório COVID-19</title>
-      <link>http://rpinheiro.dev/relatorio_covid/</link>
+      <link>http://rpinheiro.dev/2021-02-02-relatorio-covid/</link>
       <pubDate>Tue, 02 Feb 2021 02:13:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/relatorio_covid/</guid>
+      <guid>http://rpinheiro.dev/2021-02-02-relatorio-covid/</guid>
       <description>Este é o relatório diário da situação de óbitos por COVID19 no Brasil e Estados Unidos, com base em dados obtidos a partir de API, disponível no endereço</description>
     </item>
     
