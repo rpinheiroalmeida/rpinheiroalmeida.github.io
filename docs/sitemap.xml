@@ -3,8 +3,58 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://rpinheiro.dev/tags/aarm/</loc>
+    <lastmod>2021-08-25T22:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/2021-08-25-aarm/</loc>
+    <lastmod>2021-08-25T22:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/agile/</loc>
+    <lastmod>2021-08-25T22:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/arquitetura/</loc>
+    <lastmod>2021-08-25T22:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/categories/arquitetura/</loc>
+    <lastmod>2021-08-25T22:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://rpinheiro.dev/categories/</loc>
-    <lastmod>2021-02-02T02:13:50+00:00</lastmod>
+    <lastmod>2021-08-25T22:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/gerenciamento/</loc>
+    <lastmod>2021-08-25T22:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/</loc>
+    <lastmod>2021-08-25T22:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/post/</loc>
+    <lastmod>2021-08-25T22:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/risco/</loc>
+    <lastmod>2021-08-25T22:55:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://rpinheiro.dev/tags/</loc>
+    <lastmod>2021-08-25T22:55:00+00:00</lastmod>
   </url>
   
   <url>
@@ -23,27 +73,12 @@
   </url>
   
   <url>
-    <loc>http://rpinheiro.dev/</loc>
-    <lastmod>2021-02-02T02:13:50+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://rpinheiro.dev/post/</loc>
-    <lastmod>2021-02-02T02:13:50+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://rpinheiro.dev/tags/r/</loc>
     <lastmod>2021-02-02T02:13:50+00:00</lastmod>
   </url>
   
   <url>
     <loc>http://rpinheiro.dev/2021-02-02-relatorio-covid/</loc>
-    <lastmod>2021-02-02T02:13:50+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://rpinheiro.dev/tags/</loc>
     <lastmod>2021-02-02T02:13:50+00:00</lastmod>
   </url>
   
@@ -75,11 +110,6 @@
   <url>
     <loc>http://rpinheiro.dev/2019-05-01-feature-toggle-manager/</loc>
     <lastmod>2019-05-01T18:00:50+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://rpinheiro.dev/tags/agile/</loc>
-    <lastmod>2018-01-16T22:22:50+00:00</lastmod>
   </url>
   
   <url>
@@ -140,16 +170,6 @@
   <url>
     <loc>http://rpinheiro.dev/tags/tdc/</loc>
     <lastmod>2017-05-04T21:49:50+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://rpinheiro.dev/tags/arquitetura/</loc>
-    <lastmod>2017-03-23T22:49:50+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://rpinheiro.dev/categories/arquitetura/</loc>
-    <lastmod>2017-03-23T22:49:50+00:00</lastmod>
   </url>
   
   <url>

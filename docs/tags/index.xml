@@ -5,7 +5,52 @@
     <link>http://rpinheiro.dev/tags/</link>
     <description>Recent content in Tags on NullPointer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 02 Feb 2021 02:13:50 +0000</lastBuildDate><atom:link href="http://rpinheiro.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Aug 2021 22:55:00 +0000</lastBuildDate><atom:link href="http://rpinheiro.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AARM</title>
+      <link>http://rpinheiro.dev/tags/aarm/</link>
+      <pubDate>Wed, 25 Aug 2021 22:55:00 +0000</pubDate>
+      
+      <guid>http://rpinheiro.dev/tags/aarm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Agile</title>
+      <link>http://rpinheiro.dev/tags/agile/</link>
+      <pubDate>Wed, 25 Aug 2021 22:55:00 +0000</pubDate>
+      
+      <guid>http://rpinheiro.dev/tags/agile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>arquitetura</title>
+      <link>http://rpinheiro.dev/tags/arquitetura/</link>
+      <pubDate>Wed, 25 Aug 2021 22:55:00 +0000</pubDate>
+      
+      <guid>http://rpinheiro.dev/tags/arquitetura/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gerenciamento</title>
+      <link>http://rpinheiro.dev/tags/gerenciamento/</link>
+      <pubDate>Wed, 25 Aug 2021 22:55:00 +0000</pubDate>
+      
+      <guid>http://rpinheiro.dev/tags/gerenciamento/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Risco</title>
+      <link>http://rpinheiro.dev/tags/risco/</link>
+      <pubDate>Wed, 25 Aug 2021 22:55:00 +0000</pubDate>
+      
+      <guid>http://rpinheiro.dev/tags/risco/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>covid19</title>
       <link>http://rpinheiro.dev/tags/covid19/</link>
@@ -70,15 +115,6 @@
     </item>
     
     <item>
-      <title>Agile</title>
-      <link>http://rpinheiro.dev/tags/agile/</link>
-      <pubDate>Tue, 16 Jan 2018 22:22:50 +0000</pubDate>
-      
-      <guid>http://rpinheiro.dev/tags/agile/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Lean Software</title>
       <link>http://rpinheiro.dev/tags/lean-software/</link>
       <pubDate>Tue, 16 Jan 2018 22:22:50 +0000</pubDate>
@@ -111,15 +147,6 @@
       <pubDate>Thu, 04 May 2017 21:49:50 +0000</pubDate>
       
       <guid>http://rpinheiro.dev/tags/tdc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>arquitetura</title>
-      <link>http://rpinheiro.dev/tags/arquitetura/</link>
-      <pubDate>Thu, 23 Mar 2017 22:49:50 +0000</pubDate>
-      
-      <guid>http://rpinheiro.dev/tags/arquitetura/</guid>
       <description></description>
     </item>
     

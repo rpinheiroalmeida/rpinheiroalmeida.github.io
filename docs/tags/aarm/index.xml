@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AARM on NullPointer</title>
+    <link>http://rpinheiro.dev/tags/aarm/</link>
+    <description>Recent content in AARM on NullPointer</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 25 Aug 2021 22:55:00 +0000</lastBuildDate><atom:link href="http://rpinheiro.dev/tags/aarm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AARM: Agile Architecture Risk Management</title>
+      <link>http://rpinheiro.dev/2021-08-25-aarm/</link>
+      <pubDate>Wed, 25 Aug 2021 22:55:00 +0000</pubDate>
+      
+      <guid>http://rpinheiro.dev/2021-08-25-aarm/</guid>
+      <description>Recentemente, ouvi o seguinte relato:
+“Acabei de encontrar um bug aqui no backend e falei: precisamos retornar um 4xx como um erro.</description>
+    </item>
+    
+  </channel>
+</rss>
