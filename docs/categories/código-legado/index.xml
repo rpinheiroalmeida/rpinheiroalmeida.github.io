@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>código legado on NullPointer</title>
-    <link>http://rpinheiro.dev/categories/c%C3%B3digo-legado/</link>
+    <link>//rpinheiro.dev/categories/c%C3%B3digo-legado/</link>
     <description>Recent content in código legado on NullPointer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 23 Mar 2017 02:13:50 +0000</lastBuildDate><atom:link href="http://rpinheiro.dev/categories/c%C3%B3digo-legado/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Mar 2017 02:13:50 +0000</lastBuildDate><atom:link href="//rpinheiro.dev/categories/c%C3%B3digo-legado/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Objetos Seam - O que são, por que usá-los e quando</title>
-      <link>http://rpinheiro.dev/2017-03-23-objects-seam/</link>
+      <link>//rpinheiro.dev/2017-03-23-objects-seam/</link>
       <pubDate>Thu, 23 Mar 2017 02:13:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2017-03-23-objects-seam/</guid>
+      <guid>//rpinheiro.dev/2017-03-23-objects-seam/</guid>
       <description>Quando se trabalha com código legado e tenta escrever testes de unidade para uma classe repleta de dependências, percebe-se a dificuldade e o quão bom o código está ou não.</description>
     </item>
     
     <item>
       <title>Como modelar microservice?</title>
-      <link>http://rpinheiro.dev/2017-03-29-how-to-model-service/</link>
+      <link>//rpinheiro.dev/2017-03-29-how-to-model-service/</link>
       <pubDate>Wed, 22 Mar 2017 22:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2017-03-29-how-to-model-service/</guid>
+      <guid>//rpinheiro.dev/2017-03-29-how-to-model-service/</guid>
       <description>Contexto O sistema atual no qual estou trabalhando consite de um monolítico para o domínio de e-commerce e integrações com outros sistemas via bibliotecas.</description>
     </item>
     

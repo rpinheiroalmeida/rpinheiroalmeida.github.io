@@ -2,223 +2,223 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on NullPointer</title>
-    <link>http://rpinheiro.dev/tags/</link>
+    <link>//rpinheiro.dev/tags/</link>
     <description>Recent content in Tags on NullPointer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 25 Aug 2021 22:55:00 +0000</lastBuildDate><atom:link href="http://rpinheiro.dev/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Aug 2021 22:55:00 +0000</lastBuildDate><atom:link href="//rpinheiro.dev/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AARM</title>
-      <link>http://rpinheiro.dev/tags/aarm/</link>
+      <link>//rpinheiro.dev/tags/aarm/</link>
       <pubDate>Wed, 25 Aug 2021 22:55:00 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/aarm/</guid>
+      <guid>//rpinheiro.dev/tags/aarm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Agile</title>
-      <link>http://rpinheiro.dev/tags/agile/</link>
+      <link>//rpinheiro.dev/tags/agile/</link>
       <pubDate>Wed, 25 Aug 2021 22:55:00 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/agile/</guid>
+      <guid>//rpinheiro.dev/tags/agile/</guid>
       <description></description>
     </item>
     
     <item>
       <title>arquitetura</title>
-      <link>http://rpinheiro.dev/tags/arquitetura/</link>
+      <link>//rpinheiro.dev/tags/arquitetura/</link>
       <pubDate>Wed, 25 Aug 2021 22:55:00 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/arquitetura/</guid>
+      <guid>//rpinheiro.dev/tags/arquitetura/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Gerenciamento</title>
-      <link>http://rpinheiro.dev/tags/gerenciamento/</link>
+      <link>//rpinheiro.dev/tags/gerenciamento/</link>
       <pubDate>Wed, 25 Aug 2021 22:55:00 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/gerenciamento/</guid>
+      <guid>//rpinheiro.dev/tags/gerenciamento/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Risco</title>
-      <link>http://rpinheiro.dev/tags/risco/</link>
+      <link>//rpinheiro.dev/tags/risco/</link>
       <pubDate>Wed, 25 Aug 2021 22:55:00 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/risco/</guid>
+      <guid>//rpinheiro.dev/tags/risco/</guid>
       <description></description>
     </item>
     
     <item>
       <title>covid19</title>
-      <link>http://rpinheiro.dev/tags/covid19/</link>
+      <link>//rpinheiro.dev/tags/covid19/</link>
       <pubDate>Tue, 02 Feb 2021 02:13:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/covid19/</guid>
+      <guid>//rpinheiro.dev/tags/covid19/</guid>
       <description></description>
     </item>
     
     <item>
       <title>estatística</title>
-      <link>http://rpinheiro.dev/tags/estat%C3%ADstica/</link>
+      <link>//rpinheiro.dev/tags/estat%C3%ADstica/</link>
       <pubDate>Tue, 02 Feb 2021 02:13:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/estat%C3%ADstica/</guid>
+      <guid>//rpinheiro.dev/tags/estat%C3%ADstica/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>http://rpinheiro.dev/tags/r/</link>
+      <link>//rpinheiro.dev/tags/r/</link>
       <pubDate>Tue, 02 Feb 2021 02:13:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/r/</guid>
+      <guid>//rpinheiro.dev/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Desenvolvimento</title>
-      <link>http://rpinheiro.dev/tags/desenvolvimento/</link>
+      <link>//rpinheiro.dev/tags/desenvolvimento/</link>
       <pubDate>Wed, 01 May 2019 18:00:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/desenvolvimento/</guid>
+      <guid>//rpinheiro.dev/tags/desenvolvimento/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Java</title>
-      <link>http://rpinheiro.dev/tags/java/</link>
+      <link>//rpinheiro.dev/tags/java/</link>
       <pubDate>Wed, 01 May 2019 18:00:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/java/</guid>
+      <guid>//rpinheiro.dev/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>spring-boot</title>
-      <link>http://rpinheiro.dev/tags/spring-boot/</link>
+      <link>//rpinheiro.dev/tags/spring-boot/</link>
       <pubDate>Wed, 01 May 2019 18:00:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/spring-boot/</guid>
+      <guid>//rpinheiro.dev/tags/spring-boot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>togglz</title>
-      <link>http://rpinheiro.dev/tags/togglz/</link>
+      <link>//rpinheiro.dev/tags/togglz/</link>
       <pubDate>Wed, 01 May 2019 18:00:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/togglz/</guid>
+      <guid>//rpinheiro.dev/tags/togglz/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lean Software</title>
-      <link>http://rpinheiro.dev/tags/lean-software/</link>
+      <link>//rpinheiro.dev/tags/lean-software/</link>
       <pubDate>Tue, 16 Jan 2018 22:22:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/lean-software/</guid>
+      <guid>//rpinheiro.dev/tags/lean-software/</guid>
       <description></description>
     </item>
     
     <item>
       <title>microservices</title>
-      <link>http://rpinheiro.dev/tags/microservices/</link>
+      <link>//rpinheiro.dev/tags/microservices/</link>
       <pubDate>Mon, 15 May 2017 02:13:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/microservices/</guid>
+      <guid>//rpinheiro.dev/tags/microservices/</guid>
       <description></description>
     </item>
     
     <item>
       <title>apresentações</title>
-      <link>http://rpinheiro.dev/tags/apresenta%C3%A7%C3%B5es/</link>
+      <link>//rpinheiro.dev/tags/apresenta%C3%A7%C3%B5es/</link>
       <pubDate>Thu, 04 May 2017 21:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/apresenta%C3%A7%C3%B5es/</guid>
+      <guid>//rpinheiro.dev/tags/apresenta%C3%A7%C3%B5es/</guid>
       <description></description>
     </item>
     
     <item>
       <title>TDC</title>
-      <link>http://rpinheiro.dev/tags/tdc/</link>
+      <link>//rpinheiro.dev/tags/tdc/</link>
       <pubDate>Thu, 04 May 2017 21:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/tdc/</guid>
+      <guid>//rpinheiro.dev/tags/tdc/</guid>
       <description></description>
     </item>
     
     <item>
       <title>código legado</title>
-      <link>http://rpinheiro.dev/tags/c%C3%B3digo-legado/</link>
+      <link>//rpinheiro.dev/tags/c%C3%B3digo-legado/</link>
       <pubDate>Thu, 23 Mar 2017 22:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/c%C3%B3digo-legado/</guid>
+      <guid>//rpinheiro.dev/tags/c%C3%B3digo-legado/</guid>
       <description></description>
     </item>
     
     <item>
       <title>evolucionária</title>
-      <link>http://rpinheiro.dev/tags/evolucion%C3%A1ria/</link>
+      <link>//rpinheiro.dev/tags/evolucion%C3%A1ria/</link>
       <pubDate>Thu, 23 Mar 2017 22:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/evolucion%C3%A1ria/</guid>
+      <guid>//rpinheiro.dev/tags/evolucion%C3%A1ria/</guid>
       <description></description>
     </item>
     
     <item>
       <title>singlenton</title>
-      <link>http://rpinheiro.dev/tags/singlenton/</link>
+      <link>//rpinheiro.dev/tags/singlenton/</link>
       <pubDate>Thu, 23 Mar 2017 22:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/singlenton/</guid>
+      <guid>//rpinheiro.dev/tags/singlenton/</guid>
       <description></description>
     </item>
     
     <item>
       <title>software design</title>
-      <link>http://rpinheiro.dev/tags/software-design/</link>
+      <link>//rpinheiro.dev/tags/software-design/</link>
       <pubDate>Thu, 23 Mar 2017 22:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/software-design/</guid>
+      <guid>//rpinheiro.dev/tags/software-design/</guid>
       <description></description>
     </item>
     
     <item>
       <title>unit test</title>
-      <link>http://rpinheiro.dev/tags/unit-test/</link>
+      <link>//rpinheiro.dev/tags/unit-test/</link>
       <pubDate>Thu, 23 Mar 2017 22:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/unit-test/</guid>
+      <guid>//rpinheiro.dev/tags/unit-test/</guid>
       <description></description>
     </item>
     
     <item>
       <title>code</title>
-      <link>http://rpinheiro.dev/tags/code/</link>
+      <link>//rpinheiro.dev/tags/code/</link>
       <pubDate>Wed, 22 Mar 2017 22:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/code/</guid>
+      <guid>//rpinheiro.dev/tags/code/</guid>
       <description></description>
     </item>
     
     <item>
       <title>legacy</title>
-      <link>http://rpinheiro.dev/tags/legacy/</link>
+      <link>//rpinheiro.dev/tags/legacy/</link>
       <pubDate>Wed, 22 Mar 2017 22:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/legacy/</guid>
+      <guid>//rpinheiro.dev/tags/legacy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>index</title>
-      <link>http://rpinheiro.dev/tags/index/</link>
+      <link>//rpinheiro.dev/tags/index/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/tags/index/</guid>
+      <guid>//rpinheiro.dev/tags/index/</guid>
       <description></description>
     </item>
     

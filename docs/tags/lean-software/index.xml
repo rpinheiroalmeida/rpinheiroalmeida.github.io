@@ -2,34 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lean Software on NullPointer</title>
-    <link>http://rpinheiro.dev/tags/lean-software/</link>
+    <link>//rpinheiro.dev/tags/lean-software/</link>
     <description>Recent content in Lean Software on NullPointer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Tue, 16 Jan 2018 22:22:50 +0000</lastBuildDate><atom:link href="http://rpinheiro.dev/tags/lean-software/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Jan 2018 22:22:50 +0000</lastBuildDate><atom:link href="//rpinheiro.dev/tags/lean-software/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Agile transformation my first experience</title>
-      <link>http://rpinheiro.dev/2017-10-02-software-transformation/</link>
+      <link>//rpinheiro.dev/2017-10-02-software-transformation/</link>
       <pubDate>Tue, 16 Jan 2018 22:22:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2017-10-02-software-transformation/</guid>
+      <guid>//rpinheiro.dev/2017-10-02-software-transformation/</guid>
       <description>Although, for contractual reason I cannot say our client’s name. There are some interests facts I can talk, as:</description>
     </item>
     
     <item>
       <title>Decida o mais tarde possível</title>
-      <link>http://rpinheiro.dev/2017-05-28-decide-as-late-as-possible/</link>
+      <link>//rpinheiro.dev/2017-05-28-decide-as-late-as-possible/</link>
       <pubDate>Sun, 28 May 2017 14:25:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2017-05-28-decide-as-late-as-possible/</guid>
+      <guid>//rpinheiro.dev/2017-05-28-decide-as-late-as-possible/</guid>
       <description>Na computação de grafos há dois algoritmos de busca bem conhecidos: Busca em amplitude (BFS - Breadth First Search) e Busca em profundidade (DFS - Depht First Search).</description>
     </item>
     
     <item>
       <title>Lean Software — Aplificando o conhecimento</title>
-      <link>http://rpinheiro.dev/2017-03-23-software-lean-amplify-learning/</link>
+      <link>//rpinheiro.dev/2017-03-23-software-lean-amplify-learning/</link>
       <pubDate>Thu, 23 Mar 2017 22:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2017-03-23-software-lean-amplify-learning/</guid>
+      <guid>//rpinheiro.dev/2017-03-23-software-lean-amplify-learning/</guid>
       <description>As origens do pensamento Lean vem das linhas de montagens de manufaturamento, contudo, nada impede que os mesmos princípios sejam aplicados a outras disciplinas.</description>
     </item>
     

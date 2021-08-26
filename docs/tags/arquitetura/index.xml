@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>arquitetura on NullPointer</title>
-    <link>http://rpinheiro.dev/tags/arquitetura/</link>
+    <link>//rpinheiro.dev/tags/arquitetura/</link>
     <description>Recent content in arquitetura on NullPointer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 25 Aug 2021 22:55:00 +0000</lastBuildDate><atom:link href="http://rpinheiro.dev/tags/arquitetura/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Aug 2021 22:55:00 +0000</lastBuildDate><atom:link href="//rpinheiro.dev/tags/arquitetura/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AARM: Agile Architecture Risk Management</title>
-      <link>http://rpinheiro.dev/2021-08-25-aarm/</link>
+      <link>//rpinheiro.dev/2021-08-25-aarm/</link>
       <pubDate>Wed, 25 Aug 2021 22:55:00 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2021-08-25-aarm/</guid>
+      <guid>//rpinheiro.dev/2021-08-25-aarm/</guid>
       <description>Recentemente, ouvi o seguinte relato:
 “Acabei de encontrar um bug aqui no backend e falei: precisamos retornar um 4xx como um erro.</description>
     </item>
     
     <item>
       <title>Uma arquitetura não evolucionário com Microservices.</title>
-      <link>http://rpinheiro.dev/2017-03-25-non-evolutionary-architecture/</link>
+      <link>//rpinheiro.dev/2017-03-25-non-evolutionary-architecture/</link>
       <pubDate>Thu, 23 Mar 2017 22:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2017-03-25-non-evolutionary-architecture/</guid>
+      <guid>//rpinheiro.dev/2017-03-25-non-evolutionary-architecture/</guid>
       <description>As origens do pensamento Lean vem das linhas de montagens de manufaturamento, contudo, nada impede que os mesmos princípios sejam aplicados a outras disciplinas.</description>
     </item>
     

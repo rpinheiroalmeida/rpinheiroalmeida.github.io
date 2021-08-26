@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Agile on NullPointer</title>
-    <link>http://rpinheiro.dev/tags/agile/</link>
+    <link>//rpinheiro.dev/tags/agile/</link>
     <description>Recent content in Agile on NullPointer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 25 Aug 2021 22:55:00 +0000</lastBuildDate><atom:link href="http://rpinheiro.dev/tags/agile/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Aug 2021 22:55:00 +0000</lastBuildDate><atom:link href="//rpinheiro.dev/tags/agile/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AARM: Agile Architecture Risk Management</title>
-      <link>http://rpinheiro.dev/2021-08-25-aarm/</link>
+      <link>//rpinheiro.dev/2021-08-25-aarm/</link>
       <pubDate>Wed, 25 Aug 2021 22:55:00 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2021-08-25-aarm/</guid>
+      <guid>//rpinheiro.dev/2021-08-25-aarm/</guid>
       <description>Recentemente, ouvi o seguinte relato:
 “Acabei de encontrar um bug aqui no backend e falei: precisamos retornar um 4xx como um erro.</description>
     </item>
     
     <item>
       <title>Agile transformation my first experience</title>
-      <link>http://rpinheiro.dev/2017-10-02-software-transformation/</link>
+      <link>//rpinheiro.dev/2017-10-02-software-transformation/</link>
       <pubDate>Tue, 16 Jan 2018 22:22:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2017-10-02-software-transformation/</guid>
+      <guid>//rpinheiro.dev/2017-10-02-software-transformation/</guid>
       <description>Although, for contractual reason I cannot say our client’s name. There are some interests facts I can talk, as:</description>
     </item>
     

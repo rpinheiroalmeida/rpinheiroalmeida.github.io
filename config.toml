@@ -1,4 +1,5 @@
-baseurl = "http://rpinheiro.dev/"
+baseurl = "//rpinheiro.dev/"
+
 title = "NullPointer"
 theme = "ghostwriter"
 DefaultContentLanguage = "pt-br"
@@ -78,9 +79,6 @@ tag = "tags"
   noClasses = true
   style = "monokai"
   tabWidth = 4
-
-
-
 
 
 [Permalinks]

@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>resenhas on NullPointer</title>
-    <link>http://rpinheiro.dev/categories/resenhas/</link>
+    <link>//rpinheiro.dev/categories/resenhas/</link>
     <description>Recent content in resenhas on NullPointer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 15 May 2017 02:13:50 +0000</lastBuildDate><atom:link href="http://rpinheiro.dev/categories/resenhas/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 May 2017 02:13:50 +0000</lastBuildDate><atom:link href="//rpinheiro.dev/categories/resenhas/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Main Points - Building Microservices</title>
-      <link>http://rpinheiro.dev/2017-05-15-main-points-building-microservices/</link>
+      <link>//rpinheiro.dev/2017-05-15-main-points-building-microservices/</link>
       <pubDate>Mon, 15 May 2017 02:13:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2017-05-15-main-points-building-microservices/</guid>
+      <guid>//rpinheiro.dev/2017-05-15-main-points-building-microservices/</guid>
       <description>Following some important topics extracts from my reading of the book (Building Microservices).</description>
     </item>
     
     <item>
       <title>O que são microserviços?</title>
-      <link>http://rpinheiro.dev/2017-03-22-what-are-microservices/</link>
+      <link>//rpinheiro.dev/2017-03-22-what-are-microservices/</link>
       <pubDate>Wed, 22 Mar 2017 22:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2017-03-22-what-are-microservices/</guid>
+      <guid>//rpinheiro.dev/2017-03-22-what-are-microservices/</guid>
       <description>De acordo com Sam Newman (Building Microservices) microservices são pequenos e autônomos serviços trabalhando juntos.</description>
     </item>
     

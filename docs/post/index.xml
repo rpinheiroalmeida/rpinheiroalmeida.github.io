@@ -2,125 +2,125 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on NullPointer</title>
-    <link>http://rpinheiro.dev/post/</link>
+    <link>//rpinheiro.dev/post/</link>
     <description>Recent content in Posts on NullPointer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 25 Aug 2021 22:55:00 +0000</lastBuildDate><atom:link href="http://rpinheiro.dev/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Aug 2021 22:55:00 +0000</lastBuildDate><atom:link href="//rpinheiro.dev/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AARM: Agile Architecture Risk Management</title>
-      <link>http://rpinheiro.dev/2021-08-25-aarm/</link>
+      <link>//rpinheiro.dev/2021-08-25-aarm/</link>
       <pubDate>Wed, 25 Aug 2021 22:55:00 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2021-08-25-aarm/</guid>
+      <guid>//rpinheiro.dev/2021-08-25-aarm/</guid>
       <description>Recentemente, ouvi o seguinte relato:
 “Acabei de encontrar um bug aqui no backend e falei: precisamos retornar um 4xx como um erro.</description>
     </item>
     
     <item>
       <title>Relatório COVID-19</title>
-      <link>http://rpinheiro.dev/2021-02-02-relatorio-covid/</link>
+      <link>//rpinheiro.dev/2021-02-02-relatorio-covid/</link>
       <pubDate>Tue, 02 Feb 2021 02:13:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2021-02-02-relatorio-covid/</guid>
+      <guid>//rpinheiro.dev/2021-02-02-relatorio-covid/</guid>
       <description>Este é o relatório diário da situação de óbitos por COVID19 no Brasil e Estados Unidos, com base em dados obtidos a partir de API, disponível no endereço</description>
     </item>
     
     <item>
       <title>Usando Toggles com Togglz e Spring Boot</title>
-      <link>http://rpinheiro.dev/2019-05-01-feature-toggle-manager/</link>
+      <link>//rpinheiro.dev/2019-05-01-feature-toggle-manager/</link>
       <pubDate>Wed, 01 May 2019 18:00:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2019-05-01-feature-toggle-manager/</guid>
+      <guid>//rpinheiro.dev/2019-05-01-feature-toggle-manager/</guid>
       <description>1.Introdução Nossa aplicação está crescendo, queremos ter um controle maior do envio de novas funcionalidades para produção, fazer um roolback rápido de uma funcionalidade caso não esteja funcionando de acordo, realizar testes A/B de novas funcionalidades, realizar testes em produção de forma controlada e segura, habilitar fluxos distintos caso uma funcionalidade X seja utilizada pelo cliente Y ou Z.</description>
     </item>
     
     <item>
       <title>Agile transformation my first experience</title>
-      <link>http://rpinheiro.dev/2017-10-02-software-transformation/</link>
+      <link>//rpinheiro.dev/2017-10-02-software-transformation/</link>
       <pubDate>Tue, 16 Jan 2018 22:22:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2017-10-02-software-transformation/</guid>
+      <guid>//rpinheiro.dev/2017-10-02-software-transformation/</guid>
       <description>Although, for contractual reason I cannot say our client’s name. There are some interests facts I can talk, as:</description>
     </item>
     
     <item>
       <title>Decida o mais tarde possível</title>
-      <link>http://rpinheiro.dev/2017-05-28-decide-as-late-as-possible/</link>
+      <link>//rpinheiro.dev/2017-05-28-decide-as-late-as-possible/</link>
       <pubDate>Sun, 28 May 2017 14:25:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2017-05-28-decide-as-late-as-possible/</guid>
+      <guid>//rpinheiro.dev/2017-05-28-decide-as-late-as-possible/</guid>
       <description>Na computação de grafos há dois algoritmos de busca bem conhecidos: Busca em amplitude (BFS - Breadth First Search) e Busca em profundidade (DFS - Depht First Search).</description>
     </item>
     
     <item>
       <title>Main Points - Building Microservices</title>
-      <link>http://rpinheiro.dev/2017-05-15-main-points-building-microservices/</link>
+      <link>//rpinheiro.dev/2017-05-15-main-points-building-microservices/</link>
       <pubDate>Mon, 15 May 2017 02:13:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2017-05-15-main-points-building-microservices/</guid>
+      <guid>//rpinheiro.dev/2017-05-15-main-points-building-microservices/</guid>
       <description>Following some important topics extracts from my reading of the book (Building Microservices).</description>
     </item>
     
     <item>
       <title>Como foi a minha experiência na apresentação do TDC?</title>
-      <link>http://rpinheiro.dev/2017-05-04-my-experience-tdc/</link>
+      <link>//rpinheiro.dev/2017-05-04-my-experience-tdc/</link>
       <pubDate>Thu, 04 May 2017 21:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2017-05-04-my-experience-tdc/</guid>
+      <guid>//rpinheiro.dev/2017-05-04-my-experience-tdc/</guid>
       <description>Recentemente tive a excelente experiência de apresentar no TDC (The Developer Conference - 2017).</description>
     </item>
     
     <item>
       <title>Como testar Singletons?</title>
-      <link>http://rpinheiro.dev/2017-03-23-como-testar-singletons/</link>
+      <link>//rpinheiro.dev/2017-03-23-como-testar-singletons/</link>
       <pubDate>Thu, 23 Mar 2017 22:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2017-03-23-como-testar-singletons/</guid>
+      <guid>//rpinheiro.dev/2017-03-23-como-testar-singletons/</guid>
       <description>Há diversos tipos de dependência que tornam difíceis criar e usar frameworks de testes, uma delas é quando envolve variáveis globais, que em Java podem ser desenvolvidas através do design pattern Singleton, como no exemplo abaixo:</description>
     </item>
     
     <item>
       <title>Lean Software — Aplificando o conhecimento</title>
-      <link>http://rpinheiro.dev/2017-03-23-software-lean-amplify-learning/</link>
+      <link>//rpinheiro.dev/2017-03-23-software-lean-amplify-learning/</link>
       <pubDate>Thu, 23 Mar 2017 22:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2017-03-23-software-lean-amplify-learning/</guid>
+      <guid>//rpinheiro.dev/2017-03-23-software-lean-amplify-learning/</guid>
       <description>As origens do pensamento Lean vem das linhas de montagens de manufaturamento, contudo, nada impede que os mesmos princípios sejam aplicados a outras disciplinas.</description>
     </item>
     
     <item>
       <title>Uma arquitetura não evolucionário com Microservices.</title>
-      <link>http://rpinheiro.dev/2017-03-25-non-evolutionary-architecture/</link>
+      <link>//rpinheiro.dev/2017-03-25-non-evolutionary-architecture/</link>
       <pubDate>Thu, 23 Mar 2017 22:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2017-03-25-non-evolutionary-architecture/</guid>
+      <guid>//rpinheiro.dev/2017-03-25-non-evolutionary-architecture/</guid>
       <description>As origens do pensamento Lean vem das linhas de montagens de manufaturamento, contudo, nada impede que os mesmos princípios sejam aplicados a outras disciplinas.</description>
     </item>
     
     <item>
       <title>Objetos Seam - O que são, por que usá-los e quando</title>
-      <link>http://rpinheiro.dev/2017-03-23-objects-seam/</link>
+      <link>//rpinheiro.dev/2017-03-23-objects-seam/</link>
       <pubDate>Thu, 23 Mar 2017 02:13:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2017-03-23-objects-seam/</guid>
+      <guid>//rpinheiro.dev/2017-03-23-objects-seam/</guid>
       <description>Quando se trabalha com código legado e tenta escrever testes de unidade para uma classe repleta de dependências, percebe-se a dificuldade e o quão bom o código está ou não.</description>
     </item>
     
     <item>
       <title>Como modelar microservice?</title>
-      <link>http://rpinheiro.dev/2017-03-29-how-to-model-service/</link>
+      <link>//rpinheiro.dev/2017-03-29-how-to-model-service/</link>
       <pubDate>Wed, 22 Mar 2017 22:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2017-03-29-how-to-model-service/</guid>
+      <guid>//rpinheiro.dev/2017-03-29-how-to-model-service/</guid>
       <description>Contexto O sistema atual no qual estou trabalhando consite de um monolítico para o domínio de e-commerce e integrações com outros sistemas via bibliotecas.</description>
     </item>
     
     <item>
       <title>O que são microserviços?</title>
-      <link>http://rpinheiro.dev/2017-03-22-what-are-microservices/</link>
+      <link>//rpinheiro.dev/2017-03-22-what-are-microservices/</link>
       <pubDate>Wed, 22 Mar 2017 22:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2017-03-22-what-are-microservices/</guid>
+      <guid>//rpinheiro.dev/2017-03-22-what-are-microservices/</guid>
       <description>De acordo com Sam Newman (Building Microservices) microservices são pequenos e autônomos serviços trabalhando juntos.</description>
     </item>
     

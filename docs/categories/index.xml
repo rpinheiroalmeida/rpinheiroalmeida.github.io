@@ -2,97 +2,97 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on NullPointer</title>
-    <link>http://rpinheiro.dev/categories/</link>
+    <link>//rpinheiro.dev/categories/</link>
     <description>Recent content in Categories on NullPointer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 25 Aug 2021 22:55:00 +0000</lastBuildDate><atom:link href="http://rpinheiro.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 Aug 2021 22:55:00 +0000</lastBuildDate><atom:link href="//rpinheiro.dev/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>arquitetura</title>
-      <link>http://rpinheiro.dev/categories/arquitetura/</link>
+      <link>//rpinheiro.dev/categories/arquitetura/</link>
       <pubDate>Wed, 25 Aug 2021 22:55:00 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/categories/arquitetura/</guid>
+      <guid>//rpinheiro.dev/categories/arquitetura/</guid>
       <description></description>
     </item>
     
     <item>
       <title>estatística</title>
-      <link>http://rpinheiro.dev/categories/estat%C3%ADstica/</link>
+      <link>//rpinheiro.dev/categories/estat%C3%ADstica/</link>
       <pubDate>Tue, 02 Feb 2021 02:13:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/categories/estat%C3%ADstica/</guid>
+      <guid>//rpinheiro.dev/categories/estat%C3%ADstica/</guid>
       <description></description>
     </item>
     
     <item>
       <title>desenvolvimento</title>
-      <link>http://rpinheiro.dev/categories/desenvolvimento/</link>
+      <link>//rpinheiro.dev/categories/desenvolvimento/</link>
       <pubDate>Wed, 01 May 2019 18:00:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/categories/desenvolvimento/</guid>
+      <guid>//rpinheiro.dev/categories/desenvolvimento/</guid>
       <description></description>
     </item>
     
     <item>
       <title>metodologias-ágeis</title>
-      <link>http://rpinheiro.dev/categories/metodologias-%C3%A1geis/</link>
+      <link>//rpinheiro.dev/categories/metodologias-%C3%A1geis/</link>
       <pubDate>Tue, 16 Jan 2018 22:22:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/categories/metodologias-%C3%A1geis/</guid>
+      <guid>//rpinheiro.dev/categories/metodologias-%C3%A1geis/</guid>
       <description></description>
     </item>
     
     <item>
       <title>microservices</title>
-      <link>http://rpinheiro.dev/categories/microservices/</link>
+      <link>//rpinheiro.dev/categories/microservices/</link>
       <pubDate>Mon, 15 May 2017 02:13:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/categories/microservices/</guid>
+      <guid>//rpinheiro.dev/categories/microservices/</guid>
       <description></description>
     </item>
     
     <item>
       <title>resenhas</title>
-      <link>http://rpinheiro.dev/categories/resenhas/</link>
+      <link>//rpinheiro.dev/categories/resenhas/</link>
       <pubDate>Mon, 15 May 2017 02:13:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/categories/resenhas/</guid>
+      <guid>//rpinheiro.dev/categories/resenhas/</guid>
       <description></description>
     </item>
     
     <item>
       <title>apresentações</title>
-      <link>http://rpinheiro.dev/categories/apresenta%C3%A7%C3%B5es/</link>
+      <link>//rpinheiro.dev/categories/apresenta%C3%A7%C3%B5es/</link>
       <pubDate>Thu, 04 May 2017 21:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/categories/apresenta%C3%A7%C3%B5es/</guid>
+      <guid>//rpinheiro.dev/categories/apresenta%C3%A7%C3%B5es/</guid>
       <description></description>
     </item>
     
     <item>
       <title>software design</title>
-      <link>http://rpinheiro.dev/categories/software-design/</link>
+      <link>//rpinheiro.dev/categories/software-design/</link>
       <pubDate>Thu, 23 Mar 2017 22:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/categories/software-design/</guid>
+      <guid>//rpinheiro.dev/categories/software-design/</guid>
       <description></description>
     </item>
     
     <item>
       <title>código legado</title>
-      <link>http://rpinheiro.dev/categories/c%C3%B3digo-legado/</link>
+      <link>//rpinheiro.dev/categories/c%C3%B3digo-legado/</link>
       <pubDate>Thu, 23 Mar 2017 02:13:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/categories/c%C3%B3digo-legado/</guid>
+      <guid>//rpinheiro.dev/categories/c%C3%B3digo-legado/</guid>
       <description></description>
     </item>
     
     <item>
       <title>arquiteturas</title>
-      <link>http://rpinheiro.dev/categories/arquiteturas/</link>
+      <link>//rpinheiro.dev/categories/arquiteturas/</link>
       <pubDate>Wed, 22 Mar 2017 22:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/categories/arquiteturas/</guid>
+      <guid>//rpinheiro.dev/categories/arquiteturas/</guid>
       <description></description>
     </item>
     

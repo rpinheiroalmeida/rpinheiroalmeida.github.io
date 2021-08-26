@@ -2,16 +2,16 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>software design on NullPointer</title>
-    <link>http://rpinheiro.dev/tags/software-design/</link>
+    <link>//rpinheiro.dev/tags/software-design/</link>
     <description>Recent content in software design on NullPointer</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 23 Mar 2017 22:49:50 +0000</lastBuildDate><atom:link href="http://rpinheiro.dev/tags/software-design/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Mar 2017 22:49:50 +0000</lastBuildDate><atom:link href="//rpinheiro.dev/tags/software-design/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Como testar Singletons?</title>
-      <link>http://rpinheiro.dev/2017-03-23-como-testar-singletons/</link>
+      <link>//rpinheiro.dev/2017-03-23-como-testar-singletons/</link>
       <pubDate>Thu, 23 Mar 2017 22:49:50 +0000</pubDate>
       
-      <guid>http://rpinheiro.dev/2017-03-23-como-testar-singletons/</guid>
+      <guid>//rpinheiro.dev/2017-03-23-como-testar-singletons/</guid>
       <description>Há diversos tipos de dependência que tornam difíceis criar e usar frameworks de testes, uma delas é quando envolve variáveis globais, que em Java podem ser desenvolvidas através do design pattern Singleton, como no exemplo abaixo:</description>
     </item>
     
