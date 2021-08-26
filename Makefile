@@ -8,7 +8,7 @@ help:
 	@echo 'Usage:                                                                    '
 	@echo '   make hugo                           (re)generate the web site          '
 	@echo '   make publish                        generate using production settings '
-	@echo '   make server [PORT=1313]              serve site at http://localhost:1313'
+	@echo '   make server [PORT=1313]             serve site at http://localhost:1313'
 	@echo '                                                                          '
 
 hugo:
