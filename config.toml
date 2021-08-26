@@ -1,6 +1,6 @@
 baseurl = "http://rpinheiro.dev/"
 title = "NullPointer"
-theme = "soho"
+theme = "ghostwriter"
 DefaultContentLanguage = "pt-br"
 enableInlineShortcodes = true
 summarylength = 10

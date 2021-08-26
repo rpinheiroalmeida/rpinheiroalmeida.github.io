@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Objetos Seam - O que são, por que usá-los e quando &middot; </title>
+        <meta name="description" content="Objetos Seam - O que são, por que usá-los e quando">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.80.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Objetos Seam - O que são, por que usá-los e quando">
+<meta property="og:description" content="Objetos Seam - O que são, por que usá-los e quando">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://rpinheiro.dev/2017-03-23-objects-seam/">
+        <link rel="stylesheet" href="http://rpinheiro.dev/dist/site.css">
+        <link rel="stylesheet" href="http://rpinheiro.dev/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="http://rpinheiro.dev/">NullPointer</a>
+                            </h1>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" aria-label="Send an Email" href="mailto:rpinheiroalmeida@gmail.com">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a href="/posts/">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/categories/">Categories</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/tags/">Tags</a>
+    </li>
+
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Objetos Seam - O que são, por que usá-los e quando</h1>
+    
+        <p class="post-description" itemprop="description">Objetos Seam - O que são, por que usá-los e quando</p>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2017-03-23" itemprop="datePublished">Thu, Mar 23, 2017</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">Rodrigo Pinheiro</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>Quando se trabalha com código legado e tenta escrever testes de unidade para uma
+classe repleta de dependências, percebe-se a dificuldade e o quão bom o código
+está ou não.</p>
+<p>Vamos olhar um exemplo:</p>
+<pre><code>public class InternationalOrder {
+  public boolean save() throws Exception {
+    if (!Switches.isInternationalOrderFeaturedOn()) {
+      return false;
+    }
+    if (formData.isInternationalOrder()) {
+      ...
+    }
+  }
+}
+</code></pre><p>Como poderíamos escrever testes de unidade sem utilizar frameworks de mocks
+estáticos?</p>
+<p>Para responder a essa questão, poderíamos utilizar o conceito de Seam, mais
+especificamente <strong>Objetos Seam</strong>.</p>
+<blockquote>
+<p>Seam é um lugar onde se pode mudar o comportamento em seu programa, sem alterar
+aquele lugar. (<a href="http://working%20effectively%20with%20legacy%20code/">Working Effectively with Legacy Code</a>).</p>
+</blockquote>
+<p>Logo, podemos considerar a chamada <strong>Switches.isInternationalOrderFeaturedOn</strong>
+como Seam? A resposta é sim porque podemos mudar o seu comportamento sem alterar
+essa linha de código.</p>
+<p>Como exemplo, o que aconteceria se adicionarmos a mesma assinatura na classe
+<strong>SaveInternationalOrder</strong>?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InternationalOrder</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isInternationalOrderFeaturedOn</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">return</span> Switches<span style="color:#f92672">.</span><span style="color:#a6e22e">isInternationalFeaturedOn</span><span style="color:#f92672">()</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Esta simples mudança preserva o comportamento, pois ela apenas delega a chamada
+para uma outra função.</p>
+<p>Se criarmos uma subclasse da classe <strong>InternationOrder</strong> e sobrescrevermos o
+método <strong>isIternationalOrderFeaturedOn()</strong>?</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InternationalOrderFeaturedTurnedOn</span> <span style="color:#66d9ef">extends</span> InternationalOrder <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">isInternationalOrderFeaturedOn</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Agora ficou simples criar testes para o código sem efeitos colaterais
+desagradáveis.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InternationalOrderTest</span> <span style="color:#f92672">{</span>
+
+  <span style="color:#a6e22e">@Test</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#960050;background-color:#1e0010">﻿</span>saveOrderWhenInternationFeaturedIsTurnedOn<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    InternationalOrder saveOrder <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> InternationalOrderFeaturedTurnedOn<span style="color:#f92672">();</span>
+    assertTrue<span style="color:#f92672">(</span>saveOrder<span style="color:#f92672">.</span><span style="color:#a6e22e">save</span><span style="color:#f92672">());</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>Esta é uma possível aplicação para <strong>Objetos Seams</strong>, já que podemos mudar o
+método que é chamado sem alterar o método que o chama.</p>
+<p>Por que usar Seams ao invés de frameworks de testes de unidade com mocks
+estáticos, tais como <strong>PowerMockito</strong>?</p>
+<p>Um dos grandes desafios em trabalhar com código legado é a quebra de
+dependências. Com sorte, as dependências podem ser pequenas e localizadas,
+porém na maioria das vezes, elas são numerosas e espalhadas pelo código.
+Objetos Seams nos ajudam a identificar essas dependências, melhorar o design do
+código e aos poucos excluir dependências indesejadas.</p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/java/">Java</a>, 
+                <a href="/tags/c%C3%B3digo-legado/">Código Legado</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=Objetos%20Seam%20-%20O%20que%20s%c3%a3o%2c%20por%20que%20us%c3%a1-los%20e%20quando&url=http%3a%2f%2frpinheiro.dev%2f2017-03-23-objects-seam%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="http://rpinheiro.dev/">NullPointer</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="http://rpinheiro.dev/js/jquery-1.11.3.min.js"></script>
+        <script src="http://rpinheiro.dev/js/jquery.fitvids.js"></script>
+        <script src="http://rpinheiro.dev/js/scripts.js"></script>
+    </body>
+</html>
+

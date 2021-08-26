@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Relatório COVID-19 &middot; </title>
+        <meta name="description" content="Estudo das mortes por COVID-19 no Brasil, Estados Unidos e Itália">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="generator" content="Hugo 0.80.0" />
+        <meta name="robots" content="index,follow">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:title" content="Relatório COVID-19">
+<meta property="og:description" content="Estudo das mortes por COVID-19 no Brasil, Estados Unidos e Itália">
+<meta property="og:type" content="article">
+<meta property="og:url" content="http://rpinheiro.dev/2021-02-02-relatorio-covid/">
+        <link rel="stylesheet" href="http://rpinheiro.dev/dist/site.css">
+        <link rel="stylesheet" href="http://rpinheiro.dev/dist/syntax.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,600,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        
+        
+        
+        
+        
+
+    </head>
+    <body>
+        
+
+        <div id="wrapper">
+            <header class="site-header">
+                <div class="container">
+                    <div class="site-title-wrapper">
+                        
+                            <h1 class="site-title">
+                                <a href="http://rpinheiro.dev/">NullPointer</a>
+                            </h1>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                            <a class="button-square button-social hint--top" data-hint="Email" aria-label="Send an Email" href="mailto:rpinheiroalmeida@gmail.com">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        
+                    </div>
+
+                    <ul class="site-nav">
+                        
+    <li class="site-nav-item">
+        <a href="/posts/">Posts</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/categories/">Categories</a>
+    </li>
+
+    <li class="site-nav-item">
+        <a href="/tags/">Tags</a>
+    </li>
+
+
+                    </ul>
+                </div>
+            </header>
+
+            <div id="container">
+
+
+<div class="container">
+    <article class="post-container" itemscope="" itemtype="http://schema.org/BlogPosting">
+        <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Relatório COVID-19</h1>
+    
+        <p class="post-description" itemprop="description">Estudo das mortes por COVID-19 no Brasil, Estados Unidos e Itália</p>
+    
+    <p class="post-date post-line">
+        <span>Published <time datetime="2021-02-02" itemprop="datePublished">Tue, Feb 2, 2021</time></span>
+        <span>by</span>
+        <span itemscope="" itemprop="author" itemtype="https://schema.org/Person">
+            <span itemprop="name">
+                <a href="#" itemprop="url" rel="author">Rodrigo Pinheiro</a>
+            </span>
+        </span>
+    </p>
+    
+</header>
+
+        <div class="post-content clearfix" itemprop="articleBody">
+    
+
+    <p>Este é o relatório diário da situação de óbitos por COVID19 no Brasil e
+Estados Unidos, com base em dados obtidos a partir de API, disponível no
+endereço</p>
+<p><!-- raw HTML omitted --><a href="https://covid19api.com/">https://covid19api.com/</a><!-- raw HTML omitted --></p>
+<p>Consultando a documentação de origem, nota-se que a URL base a ser
+pesquisada possui o seguinte padrão (usando como exemplo os Estados
+Unidos):</p>
+<p><code>https://api.covid19api.com/total/country/united-states/status/deaths?from=2020-03-01T00:00:00Z&amp;to=2020-07-25T00:00:00Z</code></p>
+<p>Portanto, será necessário construir esta URL combinando o nome do país,
+a data de início e a data de fim, nos formatos especificados na URL.</p>
+<h2 id="importação-dos-dados">Importação dos Dados</h2>
+<p>Inicialmente é necessário carregar as bibliotecas para acesso à API e a
+manipulação dos dados. A biblioteca <code>openxlsx</code> é responsável pela
+manipulação de arquivos xlsx (escrita e leitura). A biblioteca <code>httr</code> é
+responsável pela execução de requisições HTTP e a biblioteca <code>jsonlite</code>
+é responsável pela manipulação de dados JSON.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">#Carregando os pacotes necessários</span>
+<span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#34;openxlsx&#34;</span>)
+<span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#34;httr&#34;</span>)
+<span style="color:#a6e22e">library</span>(<span style="color:#e6db74">&#34;jsonlite&#34;</span>)
+</code></pre></div><p>Agora serão definidos os parâmetros utilizados para a construção deste
+relatório. Iremos considerar para esse caso os países <code>Estados Unidos</code>,
+<code>Brasil</code> e <code>Itália</code>.</p>
+<p>O período considerado na pesquisa é entre <code>01/03/2020</code> e o dia corrente.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">PAIS <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;united-states&#34;</span>, <span style="color:#e6db74">&#34;brazil&#34;</span>, <span style="color:#e6db74">&#34;italy&#34;</span>)
+CODIGO <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;US&#34;</span>, <span style="color:#e6db74">&#34;BR&#34;</span>, <span style="color:#e6db74">&#34;IT&#34;</span>)
+POPULACAO <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">328.2</span>, <span style="color:#ae81ff">209.5</span>, <span style="color:#ae81ff">60.36</span>) <span style="color:#75715e">#em milhoes (google)</span>
+
+datainicio <span style="color:#f92672">&lt;-</span> <span style="color:#e6db74">&#34;2020-03-01T00:00:00Z&#34;</span>
+hoje <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">format</span>(<span style="color:#a6e22e">Sys.time</span>(), <span style="color:#e6db74">&#34;%Y-%m-%d&#34;</span>)
+datafim <span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">paste</span>(hoje,<span style="color:#e6db74">&#34;T00:00:00Z&#34;</span>,sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>)
+</code></pre></div><p>Uma idéia interessente nestes casos consistem em fazer a consulta das
+informações na API e, então, salvar os resultados em algum tipo de
+arquivo. Desta forma, se for necessário rodar novamente o relatório,
+pode-se consultar se os respectivos arquivos existem antes de “chamar” a
+API, conforme a seguir:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">npaises <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">length</span>(PAIS)
+
+<span style="color:#75715e">#Importando os dados da API e salvando para arquivos excel, caso eles jánão existam.</span>
+<span style="color:#a6e22e">for</span>(i in <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>npaises){
+
+    nomearquivo <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">paste</span>(hoje, <span style="color:#e6db74">&#34;_&#34;</span>, CODIGO[i], <span style="color:#e6db74">&#34;.xlsx&#34;</span>, sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>)
+    
+    <span style="color:#a6e22e">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">file.exists</span>(nomearquivo)){
+        url<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">paste</span>(<span style="color:#e6db74">&#34;https://api.covid19api.com/total/country/&#34;</span>, PAIS[i], <span style="color:#e6db74">&#34;/status/deaths?from=&#34;</span>, datainicio, <span style="color:#e6db74">&#34;&amp;to=&#34;</span>, datafim, sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>);
+        get_dados <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">GET</span>(url)
+        get_dados_txt <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">content</span>(get_dados, <span style="color:#e6db74">&#34;text&#34;</span>)
+        get_dados_json <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">fromJSON</span>(get_dados_txt, flatten <span style="color:#f92672">=</span> <span style="color:#66d9ef">TRUE</span>)   
+        <span style="color:#a6e22e">write.xlsx</span>(get_dados_json, nomearquivo)
+    }
+    
+}
+</code></pre></div><p>Para a título de visualização, exibimos a estrutura final do arquivo (
+2021-02-02_IT.xlsx ) para cada um dos países. Para esta pesquisa é
+importante observarmos a coluna <code>Country</code> (nome do país), <code>Cases</code>(número
+de casos coletados até a data X), <code>Date</code> (data da coleta da informação).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left">Country</th>
+<th style="text-align:left">CountryCode</th>
+<th style="text-align:left">Province</th>
+<th style="text-align:left">City</th>
+<th style="text-align:left">CityCode</th>
+<th style="text-align:left">Lat</th>
+<th style="text-align:left">Lon</th>
+<th style="text-align:right">Cases</th>
+<th style="text-align:left">Status</th>
+<th style="text-align:left">Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">325</td>
+<td style="text-align:left">United States of America</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">401807</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-19T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">326</td>
+<td style="text-align:left">United States of America</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">406184</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-20T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">327</td>
+<td style="text-align:left">United States of America</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">410387</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-21T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">328</td>
+<td style="text-align:left">United States of America</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">414147</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-22T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">329</td>
+<td style="text-align:left">United States of America</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">417476</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-23T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">330</td>
+<td style="text-align:left">United States of America</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">419251</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-24T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">331</td>
+<td style="text-align:left">United States of America</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">421168</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-25T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">332</td>
+<td style="text-align:left">United States of America</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">425252</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-26T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">333</td>
+<td style="text-align:left">United States of America</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">429195</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-27T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">334</td>
+<td style="text-align:left">United States of America</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">433196</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-28T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">335</td>
+<td style="text-align:left">United States of America</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">436799</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-29T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">336</td>
+<td style="text-align:left">United States of America</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">439530</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-30T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">337</td>
+<td style="text-align:left">United States of America</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">441324</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-31T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">338</td>
+<td style="text-align:left">United States of America</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">443355</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-02-01T00:00:00Z</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left">Country</th>
+<th style="text-align:left">CountryCode</th>
+<th style="text-align:left">Province</th>
+<th style="text-align:left">City</th>
+<th style="text-align:left">CityCode</th>
+<th style="text-align:left">Lat</th>
+<th style="text-align:left">Lon</th>
+<th style="text-align:right">Cases</th>
+<th style="text-align:left">Status</th>
+<th style="text-align:left">Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">325</td>
+<td style="text-align:left">Brazil</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">211491</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-19T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">326</td>
+<td style="text-align:left">Brazil</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">212831</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-20T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">327</td>
+<td style="text-align:left">Brazil</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">214147</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-21T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">328</td>
+<td style="text-align:left">Brazil</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">215243</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-22T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">329</td>
+<td style="text-align:left">Brazil</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">216445</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-23T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">330</td>
+<td style="text-align:left">Brazil</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">217037</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-24T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">331</td>
+<td style="text-align:left">Brazil</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">217664</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-25T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">332</td>
+<td style="text-align:left">Brazil</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">218878</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-26T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">333</td>
+<td style="text-align:left">Brazil</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">220161</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-27T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">334</td>
+<td style="text-align:left">Brazil</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">221547</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-28T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">335</td>
+<td style="text-align:left">Brazil</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">222666</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-29T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">336</td>
+<td style="text-align:left">Brazil</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">223945</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-30T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">337</td>
+<td style="text-align:left">Brazil</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">224504</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-31T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">338</td>
+<td style="text-align:left">Brazil</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">225099</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-02-01T00:00:00Z</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left">Country</th>
+<th style="text-align:left">CountryCode</th>
+<th style="text-align:left">Province</th>
+<th style="text-align:left">City</th>
+<th style="text-align:left">CityCode</th>
+<th style="text-align:left">Lat</th>
+<th style="text-align:left">Lon</th>
+<th style="text-align:right">Cases</th>
+<th style="text-align:left">Status</th>
+<th style="text-align:left">Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">325</td>
+<td style="text-align:left">Italy</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">83157</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-19T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">326</td>
+<td style="text-align:left">Italy</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">83681</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-20T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">327</td>
+<td style="text-align:left">Italy</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">84202</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-21T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">328</td>
+<td style="text-align:left">Italy</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">84674</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-22T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">329</td>
+<td style="text-align:left">Italy</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">85162</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-23T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">330</td>
+<td style="text-align:left">Italy</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">85461</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-24T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">331</td>
+<td style="text-align:left">Italy</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">85881</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-25T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">332</td>
+<td style="text-align:left">Italy</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">86422</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-26T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">333</td>
+<td style="text-align:left">Italy</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">86889</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-27T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">334</td>
+<td style="text-align:left">Italy</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">87381</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-28T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">335</td>
+<td style="text-align:left">Italy</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">87858</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-29T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">336</td>
+<td style="text-align:left">Italy</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">88279</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-30T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">337</td>
+<td style="text-align:left">Italy</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">88516</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-01-31T00:00:00Z</td>
+</tr>
+<tr>
+<td style="text-align:left">338</td>
+<td style="text-align:left">Italy</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">0</td>
+<td style="text-align:left">0</td>
+<td style="text-align:right">88845</td>
+<td style="text-align:left">deaths</td>
+<td style="text-align:left">2021-02-01T00:00:00Z</td>
+</tr>
+</tbody>
+</table>
+<h2 id="análise-gráfica">Análise Gráfica</h2>
+<p>A Análise Gráfica se dará sobre a evolução da quantidade de dias pelo
+número de mortes em 3 países, que no caso são <strong>UNITED-STATES, BRAZIL,
+ITALY</strong>.</p>
+<p>As análises a seguir (<strong>Casos Por Milhão</strong> e <strong>Mortes Diárias por
+Milhão</strong>) são feitas considerando a taxa por 1 milhões de habitantes. A
+fórmula desse cálculo é:</p>
+<p><em>T</em> = (<em>N</em>/<em>P</em>) * 1.000.000
+Em que <em>N</em> é o número de casos de morte. <em>P</em> é o tamanho da população e
+<em>T</em> é a taxa por 1 milhão de habitantes.</p>
+<p>O motivo de utilizar a taxa por 1 Milhão de habitantes é porque são
+proporcionais ao tamanho da população em questão, logo nos permite
+comparar populações de países com tamanhos diferentes.</p>
+<h3 id="gráfico-de-casos-por-milhão">Gráfico de Casos Por Milhão</h3>
+<p>Alguns pontos interessantes sobre a análise gráfica.</p>
+<ul>
+<li>Comparando a taxa de mortes por milhão de habitantes no início da
+pandemia é evidente a superioridade da Itália, destacando-se dos
+demais países (Estados Unidos e Brasil). Havendo uma diferença de
+quase 200 mortes por 1 Milhão de habitantes nos últimos dias.
+Contudo, a Itália entra em uma fase de estabilização.</li>
+<li>Apesar de Estados Unidos e Brasil iniciarem a curva de maneira
+distinta, a curva inicial dos Estados Unidos é mais linear do que a
+curva do Brasil.</li>
+<li>A curva de mortes no Brasil e Estados Unidos são quase verticais.</li>
+<li>O número de casos na Itália cresceu rapidamente no começo nos
+primeiros 50 dias (primeira fase) alcançado uma estabilização após
+os 100 dias e após o dia 250 (segunda fase), quase que de forma
+exponencial, alcançando uma estabilização após 100 dias.</li>
+<li>É visível o início da segunda fase na Itaália, começando após os 250
+dias.</li>
+<li>A segunda fase no Brasil se dá aproximadamente no dia 300 da
+pandemia.</li>
+</ul>
+<p>Explicamdo o algoritmo de geração do gráfico de mortes por 1 Milhão de
+Habitantes:</p>
+<pre><code>Para os países considerados na análise (Estados Unidos, Brasil e Itália), recupera-se o total de mortes por milhão de habitantes. Para o primeiro país, constrói-se a base inicial do gráfico e para os demais adiciona-se uma linha referente ao país. Por fim, adiciona uma legenda no topo da esquerda e um título do gráfico.
+</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#75715e">#Definindo os Parâmetros dos Gráficos</span>
+COR <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#e6db74">&#34;red&#34;</span>,<span style="color:#e6db74">&#34;blue&#34;</span>, <span style="color:#e6db74">&#34;gray&#34;</span>)
+PCH <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">17</span>, <span style="color:#ae81ff">18</span>)
+
+ndias <span style="color:#f92672">&lt;-</span> <span style="color:#a6e22e">nrow</span>(base);
+X<span style="color:#f92672">&lt;-</span><span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>ndias
+
+<span style="color:#75715e">#Gráfico de mortes por Milhão</span>
+<span style="color:#a6e22e">for</span>(i in <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>npaises){
+  nomey <span style="color:#f92672">=</span> <span style="color:#a6e22e">paste</span>(CODIGO[i],<span style="color:#e6db74">&#34;_casos_total_milhao&#34;</span>,sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>)
+  Y <span style="color:#f92672">=</span> base[,nomey]
+  
+  <span style="color:#a6e22e">if</span>(i<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>){
+    <span style="color:#a6e22e">plot</span>(X, Y, type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;o&#34;</span>, xlab<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Dias (Ref: 1 = 01/03/2020)&#34;</span>, ylim <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2000</span>), ylab<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Mortes p Milhao&#34;</span>, lty<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, lwd<span style="color:#f92672">=</span><span style="color:#ae81ff">1.5</span>, col<span style="color:#f92672">=</span>COR[i], pch<span style="color:#f92672">=</span>PCH[i], cex<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)  
+  }else{
+    <span style="color:#a6e22e">lines</span>(X, Y, type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;o&#34;</span>, lty<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, lwd<span style="color:#f92672">=</span><span style="color:#ae81ff">1.5</span>, col<span style="color:#f92672">=</span>COR[i], pch<span style="color:#f92672">=</span>PCH[i], cex<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)      
+  }
+
+}
+<span style="color:#a6e22e">grid</span>()
+<span style="color:#a6e22e">legend</span>(<span style="color:#e6db74">&#34;topleft&#34;</span>, inset <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.05</span>, cex<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, lty<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, col<span style="color:#f92672">=</span>COR, pch<span style="color:#f92672">=</span>PCH, title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Legenda&#34;</span>, legend <span style="color:#f92672">=</span> CODIGO)
+<span style="color:#a6e22e">title</span>(<span style="color:#e6db74">&#34;Mortes por Milhao&#34;</span>)
+</code></pre></div><p><img src="/images/relatorio_covid_files/figure-markdown_github/unnamed-chunk-5-1.png" alt="mortespormilhao"></p>
+<h3 id="gráfico-de-mortes-diárias-por-milhão">Gráfico de mortes diárias por Milhão</h3>
+<p>Alguns pontos sobre a análise de mortes diárias por Milhão de
+habitantes:</p>
+<ul>
+<li>Nos primeiros dias observa-se um crescimento muito rápido das mortes
+diárias por Milhão de habitantes na Itália, comparado aos Estados
+Unidos e Brasil, que demoraram para ter um crescimento mais
+ascendente.</li>
+<li>Durante todo o histórico do COVID-19, a Itália apresenta o maior
+cume de mortes diárias por Milhão, chegando a quase 3 vezes mais.</li>
+<li>O número de mortes diárias por Milhão nos Estados Unidos foi mais
+ascendente e veloz do que no Brasil.</li>
+<li>Estados Unidos e Brasil tem apresentado um número de mortes diárias
+por Milhão mais elevados e constantes do que Itália entre os dias
+100 e 250.</li>
+<li>A Itália apresenta um crescimento muito rápido do caso de mortes
+diárias por milhão, assim como também uma queda muito ascentuada.</li>
+<li>Nos últimos dias o número de mortes diárias por Milhão no Brasil tem
+mostrado um número elevado e constante, comparado aos Estados
+Unidos.</li>
+<li>É visívil o início da segunda fase da pandemia em cada um dos
+países.</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#a6e22e">for</span>(i in <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span>npaises){
+  nomey <span style="color:#f92672">=</span> <span style="color:#a6e22e">paste</span>(CODIGO[i],<span style="color:#e6db74">&#34;_casos_diario_milhao&#34;</span>,sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>)
+  Y <span style="color:#f92672">=</span> base[,nomey]
+  
+  <span style="color:#a6e22e">if</span>(i<span style="color:#f92672">==</span><span style="color:#ae81ff">1</span>){
+    <span style="color:#a6e22e">plot</span>(X, Y, type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;o&#34;</span>, xlab<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Dias (Ref: 1 = 01/03/2020)&#34;</span>, ylim <span style="color:#f92672">=</span> <span style="color:#a6e22e">c</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">20</span>), ylab<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Mortes Diarias por Milhao&#34;</span>, lty<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, lwd<span style="color:#f92672">=</span><span style="color:#ae81ff">1.5</span>, col<span style="color:#f92672">=</span>COR[i], pch<span style="color:#f92672">=</span>PCH[i], cex<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)  
+  }else{
+    <span style="color:#a6e22e">lines</span>(X, Y, type<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;o&#34;</span>, lty<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, lwd<span style="color:#f92672">=</span><span style="color:#ae81ff">1.5</span>, col<span style="color:#f92672">=</span>COR[i], pch<span style="color:#f92672">=</span>PCH[i], cex<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)      
+  }
+  
+}
+
+<span style="color:#a6e22e">grid</span>()
+<span style="color:#a6e22e">legend</span>(<span style="color:#e6db74">&#34;topleft&#34;</span>, inset <span style="color:#f92672">=</span> <span style="color:#ae81ff">0.05</span>, cex<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, lty<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>, col<span style="color:#f92672">=</span>COR, pch<span style="color:#f92672">=</span>PCH, title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Legenda&#34;</span>, legend <span style="color:#f92672">=</span> CODIGO)
+<span style="color:#a6e22e">title</span>(<span style="color:#e6db74">&#34;Mortes Diarias por Milhao&#34;</span>)
+</code></pre></div><p><img src="/images/relatorio_covid_files/figure-markdown_github/unnamed-chunk-6-1.png" alt="mortesdiarias"></p>
+
+</div>
+
+        <footer class="post-footer clearfix">
+        <p class="post-tags">
+            <span>Tagged:</span>
+                <a href="/tags/covid19/">covid19</a>, 
+                <a href="/tags/r/">R</a>, 
+                <a href="/tags/estat%C3%ADstica/">estatística</a>
+        </p>
+    <div class="share">
+            <a class="icon-twitter" href="https://twitter.com/share?text=Relat%c3%b3rio%20COVID-19&url=http%3a%2f%2frpinheiro.dev%2f2021-02-02-relatorio-covid%2f"
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" aria-label="Share on Twitter">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+    </div>
+</footer>
+
+        
+    </article>
+</div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="site-title-wrapper">
+                    <h1 class="site-title">
+                        <a href="http://rpinheiro.dev/">NullPointer</a>
+                    </h1>
+                    <a class="button-square button-jump-top js-jump-top" href="#" aria-label="Back to Top">
+                        <i class="fa fa-angle-up" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="footer-copyright">
+                    <span>&copy; 2021 / Powered by <a href="https://gohugo.io/">Hugo</a></span>
+                </p>
+                <p class="footer-copyright">
+                    <span><a href="https://github.com/roryg/ghostwriter">Ghostwriter theme</a> By <a href="http://jollygoodthemes.com">JollyGoodThemes</a></span>
+                    <span>/ <a href="https://github.com/jbub/ghostwriter">Ported</a> to Hugo By <a href="https://github.com/jbub">jbub</a></span>
+                </p>
+            </div>
+        </footer>
+
+        <script src="http://rpinheiro.dev/js/jquery-1.11.3.min.js"></script>
+        <script src="http://rpinheiro.dev/js/jquery.fitvids.js"></script>
+        <script src="http://rpinheiro.dev/js/scripts.js"></script>
+    </body>
+</html>
+
