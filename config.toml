@@ -1,6 +1,6 @@
 baseurl = "//rpinheiro.dev/"
 
-title = "NullPointer"
+title = "🐶 Pug Commit 🐶"
 theme = "ghostwriter"
 DefaultContentLanguage = "pt-br"
 enableInlineShortcodes = true
@@ -11,7 +11,7 @@ publishDir = "docs"
 
 [params]
 intro = true
-headline = "My headline"
+headline = "..."
 description = "..."
 email = "rpinheiroalmeida@gmail.com"
 opengraph = true
