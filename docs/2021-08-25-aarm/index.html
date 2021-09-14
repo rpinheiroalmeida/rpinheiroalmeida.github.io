@@ -95,26 +95,140 @@
         <div class="post-content clearfix" itemprop="articleBody">
     
 
-    <p>Recentemente, ouvi o seguinte relato:</p>
-<p>“Acabei de encontrar um bug aqui no backend e falei: precisamos retornar um 4xx como um erro. Depois de algum tempo, a decisão do arquiteto foi que todas as APIs teriam que retornar 400&quot;.</p>
-<p>Essas e outras decisões nos fazem pensar no arquiteto como alguém que está ali para engessar o processo. Uma pessoa para criticar o nosso trabalho. Ou ainda, uma pessoa a mais para justificarmos as nossas decisões. Essa visão de um arquiteto enterprise, que remonta ao arquiteto da Matrix, aquela pessoa arrogante que toma todas as decisões importantes e decide o futuro da humanidade.</p>
-<p>Contudo, com o advento dos os princípios ágeis surgiram coisas como:</p>
-<p>“Continuous attention to technical excellence and good design enhances agility.”
-“The best architectures, requirements, and designs emerge from self-organizing teams.”</p>
-<p>Logo, podemos concluir que não precisamos da figura do arquiteto em um time ágil e todas as decisões arquiteturais seriam descentralizadas e de responsabilidade dos times. Mesmo se isso fosse verdade, como a instituição/empresa garante que as decisões técnicas tomadas pelos times estão de acordo com os objetivos do produto.</p>
-<p>Nenhum dos extremos são interessantes, um time de arquitetura que trabalha de forma isolada e acredita que conhece o negócio e impõe um conjunto de regras para os times obedecerem e nem a ausência completa de arquitetos, que podem gerar sistemas completamentes diferentes dentro da mesma empresa ou ainda pior, sistemas que resultam em big ball of mud ou spaghetti.</p>
-<p>Portanto, acredito que o arquiteto deva ser um membro do time, e/ou um parceiro que esteja no dia-a-dia. Uma pessoa capaz de comunicar as restrições arquiteturais, guiar o time nas decisões técnicas do projeto, alinhar a visão técnica com a visão de negócio, gerenciar riscos arquiteturais dos produtos.</p>
-<p>É o que está exemplificado na figura abaixo, onde temos o modelo de cross-pollination em detrimento do modelo standardization. O cross-pollination, consiste em ter um arquiteto como um evangelizador e coletor, ou seja, o arquiteto é responsável por evangelizar os times com boas práticas de design de arquitetura, ajudá-los no gerenciamento de riscos e escolhas, alinhando objetivos de negócio com técnico, ao mesmo tempo que coleta dos times melhorias nos processos, ferramentas e necessidades que podem vir a ser cross. Já o modelo standardization é o modelo de padronizar tecnologias, processos, submetendo para os times como um conjunto de regras a serem seguidas.</p>
-<p><img src="/images/standardpollinization.png" alt="Evangelização ao invés de padronização" title="Figura 1"></p>
-<p>Recentemente, vemos testando o modelo de cross-pollination em um cliente, o que vem ajudando bastante nos aspectos de qualidade, gestão de risco, comunicação e tomadas de decisões baseados em fatos, e não apaixonadas por tecnologia X ou Y.</p>
-<p>Para isso, criamos a metodologia Agile Architecture Risk Management. Neste modelo, o arquiteto é responsável pela construção, evangelização dos times e passos iniciais. Ele compreende 4 fases:</p>
-<ul>
-<li>A fase <strong>Estratégia de Produtos/Negócios</strong> consiste em identificar quais os objetivos estratégicos do produto.</li>
-<li>A fase <strong>Priorizar as características da arquitetura</strong> é responsável por definir ou validar as características da arquitetura para apoiar as necessidades de negócio.</li>
-<li>A fase <a href="https://riskstorming.com/">Risk Storming</a> é responsável pela identificação dos riscos associados à arquitetura. Nesta fase, utilizamos a técnica colaborativa de <a href="https://riskstorming.com/">Risk Storming</a>.</li>
-<li>A fase <strong>Histórias de Arquitetura</strong>, tem o objetivo de, a partir dos riscos, levantar as histórias de arquitetura para que sejam desenvolvidas pelo time.</li>
-</ul>
+    <p>As experiências que tive com arquitetas de software em empresas corporativas foram de pessoas arrogantes dando ordens a desenvolvedoras de como fazer tarefas, em vez de trabalharem juntas com o time de desenvolvimento, resultando na perda de respeito, e o mais preocupante, as desenvolvedoras enxergam as arquitetas como uma etapa bloqueante no processo de entrega de software.</p>
+<p>Com o advento dos princípios ágeis, surgiram coisas como:</p>
+<p>&ldquo;A atenção contínua à excelência técnica e ao bom design aumenta a agilidade.&rdquo;
+&ldquo;As melhores arquiteturas, requisitos e designs emergem de equipes auto-organizadas.&rdquo;
+[https://agilemanifesto.org/]</p>
+<p>Levando a um entendimento de muitos times que não precisam da figura da arquiteta no mundo ágil e todas as decisões arquiteturais deveriam ser descentralizadas e de responsabilidade dos times. Porém, mesmo se isso fosse verdade, como a instituição/empresa garante que as decisões técnicas tomadas pelos times estão de acordo com os objetivos do produto?</p>
+<p>Portanto, a arquiteta deve ser um membro do time, e/ou um parceira que esteja no dia-a-dia. Uma pessoa capaz de comunicar as restrições arquiteturais, guiar o time nas decisões técnicas do projeto, alinhar a visão técnica com a visão de negócio e gerenciar riscos arquiteturais dos produtos.</p>
+<p>Nenhum dos extremos são interessantes, um time de arquitetura que trabalha de forma isolada e acredita que conhece o negócio impondo um conjunto de regras para os times obedecerem e nem a ausência completa de arquitetas, que podem gerar sistemas completamentes diferentes dentro da mesma empresa ou ainda pior, sistemas que resultam em big ball of mud ou spaghetti.</p>
+<p>Na Figura 1, onde temos o modelo de cross-pollination em detrimento do modelo standardization. O cross-pollination, consiste em ter uma arquiteta como uma evangelizadora e coletora, ou seja, a arquiteta é responsável por evangelizar os times com boas práticas de design de arquitetura, promover a troca de experiências e lições aprendidas entre times (identificando soluções em uma equipe que podem beneficiar outra equipe que eventualmente esteja passando por desafios semelhantes), ajudá-los no gerenciamento de riscos e escolhas, ao mesmo tempo que coleta dos times melhorias nos processos, ferramentas e necessidades que podem vir a ser cross. Já o modelo standardization é o modelo de padronizar tecnologias, ferramentas e processos, submetendo para os times como um conjunto de regras a serem seguidas cegamente, traçando um denominador comum que limita o valor e o potencial de todos, com o suposto objetivo de beneficiar um bem maior para a organização.</p>
+<p><img src="/images/standardpollinization.png" alt="Fonte: https://labs.spotify.com/2014/03/27/spotify-engineering-culture-part-1/" title="Figura 1"></p>
+<p>Recentemente, trabalhando de forma cross para um cliente, estamos aplicando o modelo de cross-pollination. O que tem contribuído nos alinhamentos das tomadas de decisões técnicas com os objetivos de negócio, eliminando decisões apaixonadas por modelos arquiteturais X ou Y, ou ainda, por qual tecnologia usar.</p>
+<p>Para isso, criamos a metodologia Agile Architecture Risk Management (Figura 2). Neste modelo, a arquiteta é responsável pela preparação, evangelização dos times e passos iniciais. Ele compreende 4 fases:</p>
+<ol>
+<li><strong>Estratégia de Produtos/Negócios</strong> consiste em identificar quais os objetivos estratégicos do produto.</li>
+<li><strong>Priorizar as características da arquitetura</strong> é responsável por definir ou validar as características da 3.arquitetura para apoiar as necessidades de negócio.</li>
+<li><a href="https://riskstorming.com/">Risk Storming</a> é responsável pela identificação dos riscos associados à arquitetura.</li>
+<li><strong>Histórias de Arquitetura</strong>, tem o objetivo de, a partir dos riscos, levantar as histórias de arquitetura para que sejam desenvolvidas pelo time.</li>
+</ol>
 <p><img src="/images/aarm-model.png" alt="AARM Model" title="Agile Architecture Risk Management"></p>
+<p>A fase Estratégia de Produto/Negócios consiste em coletar informações ou planos estratégicos para os produtos. Para isso, são enviados 3 perguntas para a PO (Product Owner):
+Qual a visão do produto?
+Qual a missão do produto?
+Dentre as características abaixo, elenque as 5 mais prioritárias:</p>
+<ul>
+<li>Aumentar a receita</li>
+<li>Aumentar a receita</li>
+<li>Aumentar a participação de mercado (market share)</li>
+<li>Aumentar a participação da carteira (share of wallet)</li>
+<li>Aumentar o lucro</li>
+<li>Melhorar a retenção de clientes</li>
+<li>Melhorar a segurança</li>
+<li>Melhorar o time to market</li>
+<li>Aumentar o valor do acionista</li>
+<li>Aumentar o lucro por ação</li>
+<li>Crescer por meio de aquisições</li>
+<li>Diversificar ou criar novas fontes de receita</li>
+<li>Venda cruzada de produtos (cross-sell)</li>
+<li>Reduzir as taxas de erro / defeito do produto</li>
+<li>Gerenciar custos</li>
+</ul>
+<p>Um exemplo de respostas obtidas, pode ser visto abaixo:</p>
+<ul>
+<li>Qual a missão do produto?</li>
+</ul>
+<p><strong>Criar condições para permitir que o Gateway de Pagamento capture toda a oportunidade, dimensione os negócios mais rapidamente, maximizando os resultados e valorizando ao mesmo tempo as consultoras e protegendo o core business.</strong></p>
+<ul>
+<li>Qual a visão do produto?</li>
+</ul>
+<p><strong>Garantir uma experiência de pagamento fluída com foco na experiência do usuário, gerando nova frente de receita para a companhia e aumentando a conversão de pedidos através de uma plataforma transacional global e escalável.</strong></p>
+<ul>
+<li>
+<p>Quais são os principais objetivos estratégicos para o produto neste momento?</p>
+<ul>
+<li>Aumentar o lucro</li>
+<li>Melhorar a retenção de clientes</li>
+<li>Melhorar a segurança</li>
+<li>Melhorar time to market</li>
+<li>Diversificar ou criar novas fontes de receita</li>
+</ul>
+</li>
+</ul>
+<p>A fase de Priorizar Características de Arquitetura consiste, a partir das respostas ou da captação da estratégia de negócio do produto, realizar um mapeamento para as características arquiteturais. Nesta fase é fundamental a presença das pessoas mais experientes nas práticas de arquitetura, pois os trade-offs podem se tornar complexos e ao mesmo tempo sutis. Definir as principais características de arquitetura de modo apropriado é fundamental para o sucesso do produto.</p>
+<p>Para o exemplo acima do Gateway de Pagamento, foram mapeadas as seguintes características:</p>
+<table>
+<thead>
+<tr>
+<th>Objetivo estratégico de negócio/produto</th>
+<th>Características arquiteturais</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Plataforma transacional global e escalável</td>
+<td>Internacionalização, Escalabilidade</td>
+</tr>
+<tr>
+<td>Aumentar o lucro</td>
+<td>Redução de curso, simplicidade</td>
+</tr>
+<tr>
+<td>Melhorar retenção do cliente</td>
+<td>Disponibilidade, performance, tolerância a falha</td>
+</tr>
+<tr>
+<td>Melhorar time to market</td>
+<td>Agilidade, testabilidade, <!-- raw HTML omitted -->deployability</td>
+</tr>
+<tr>
+<td>Melhorar a segurança</td>
+<td>Segurança</td>
+</tr>
+<tr>
+<td>Diversificar ou criar novas fontes de receita</td>
+<td>Integralidade, adaptabilidade, extensibilidade, <!-- raw HTML omitted -->interoperabilidade</td>
+</tr>
+</tbody>
+</table>
+<p>Uma vez as características arquiteturais identificadas, é o momento de priorizá-las. Para isso, é realizada uma reunião com as lideranças do produto (líderes técnicas, product owners, analistas de negócio, etc) para discutir quais as características mais importantes no momento, dado o contexto e a direção estratégica do produto.</p>
+<p>Nesta cerimônia o objetivo é identificar as principais características arquiteturais norteadoras de decisões. Para isso, seguimos as seguintes etapas:</p>
+<ol>
+<li>Primeiramente identificamos as primeiras 7 principais características arquiteturais;</li>
+<li>Dentre as 7, escolhe-se as top 3;</li>
+<li>Depois identificamos as características implícitas, que são características não especificadas ou identificadas</li>
+<li>pelos objetivos de negócio. É importante mapeá-las porque podem transformar-se em características norteadoras dependendo do momento do produto ou mudanças nos objetivos de negócio;</li>
+<li>Por fim, destacar as características arquiteturais que foram mapeadas e não são consideradas prioritárias no momento.</li>
+</ol>
+<p>Para o exemplo em questão do Gateway de Pagamento, foi considerado a priorização abaixo:</p>
+<ul>
+<li>Para uma plataforma de pagamento, <strong>segurança</strong> é uma cidadã de primeira classe e portanto, uma falha de segurança é catastrófica tanto do ponto de vista financeiro quanto da imagem do produto.</li>
+<li>A cada minuto uma plataforma de pagamento indisponível é um prejuízo financeiro gigantesco, principalmente tendo em vista que todas as transações de pagamento passam pela plataforma, por isso a <strong>disponibilidade</strong> é tão importante.</li>
+<li>Por fim, <strong>agilidade</strong> pois a plataforma está em um momento de expansão para novas integrações, sendo necessário entregas ágeis com qualidade e segurança.</li>
+</ul>
+<p><img src="/images/principal-caracteristicas-arquiteturais.png" alt="Principais características arquiteturais" title="Principais características arquiteturais"></p>
+<p>Por fim, toda a etapa inicial concluída, é o momento de identificar os riscos dentro da arquitetura. Nessa etapa, é extremamente importante a participação de todo o time, pois uma arquiteta/time de arquitetura não terá todo o conhecimento de cada parte do sistema, além de ser um momento crucial para a arquiteta &lsquo;polinizar&rsquo; o time de desenvolvimento com conhecimentos arquiteturais e coletar pontos de melhoria.</p>
+<p>Para isso, utilizamos Risk Storming, que é um exercício colaborativo para determinar riscos arquiteturais dentro de uma característica específica. Aqui é importante destacar, que cada sessão de risk storming envolva a análise de apenas uma característica arquitetural por vez (por exemplo, segurança) para que haja um foco dos participantes em uma determinada dimensão e evitar confusão sobre múltiplos riscos sendo identificados na mesma região da arquitetura.</p>
+<p>A cerimônia de risk storming envolve tanto um esforço individual quanto um esforço colaborativo. Na parte individual, todas as participantes, individualmente (sem colaboração) identificam uma área de risco dentro da arquitetura. Esta parte individual e sem colaboração é importante para que uma participante não influencie a outra. Na parte colaborativa, todos os participantes tentam chegar em um consenso sobre os riscos identificados, com discussões sobre a identificação do risco ser ou não um risco, e possíveis soluções de como mitigá-lo. Além disso, caso sinta-se necessário, pode-se convidar experts em determinada característica, por exemplo, para a sessão de risk storming do exemplo explorado foram chamadas especialistas em segurança para se ter conversas mais profundas sobre os riscos.</p>
+<p>Risk Storming é quebrada nas seguintes etapas:</p>
+<ol>
+<li>Utilizando os diagramas de arquitetura da aplicação, pode-se utilizar um ou mais diagramas C4 (ou qualquer outro formato que o time esteja acostumado a trabalhar) para mostrar o que se deseja construir ou alterar</li>
+<li>Identificar os riscos individualmente. É solicitado a cada participante, que individualmente, identifique áreas de risco dentro da arquitetura. Escrever um resumo de cada risco em um post-it separado, codificado por cores para representar os riscos de baixa, média e alta prioridade (vide matriz de priorização abaixo). Nesse momento, cada participante faz a seguinte pergunta: Qual o impacto de determinado risco acontecer? E qual a probabilidade dele acontecer?</li>
+</ol>
+<p><img src="/images/matriz-priorizacao.png" alt="Matriz de priorização de riscos" title="Matriz de priorização de riscos">
+3. Apontar os riscos no diagrama. Nesse momento, todas as participantes colocam seus post-its nos diagramas próximos da área onde o risco foi identificado.
+4. Revisar e resumir os riscos. Cada risco identificado é revisado e resumido, focalizando especialmente nos riscos que apenas uma pessoa identificou ou riscos em que várias pessoas discordam sobre a prioridade.
+5. Criar as histórias de arquitetura. Por fim, os riscos identificados e priorizados são adicionados ao Backlog do produto para que os times possam desenvolvê-los.</p>
+<p>O modelo é simples e prático, permitindo que equipes de todos os portes e níveis de experiência possam adotá-lo, evoluí-lo e adaptá-lo, ganhando fluência e maturidade ao longo do tempo.
+É muito importante notar que o Agile Architecture Risk Management conecta os objetivos estratégicos do produto/negócio às decisões técnicas mais importantes do produto, dentro do dia a dia das equipes. Isso garante que todas as decisões do time técnico estejam diretamente relacionadas aos objetivos estratégicos.
+Adicionalmente, a visão de gestão de riscos nos permite gerenciar a aderência da nossa arquitetura aos objetivos de negócio, de forma colaborativa, estruturada e priorizada. Além de nos permitir identificar e comunicar riscos importantes de forma antecipada. O negócio ganha melhor visibilidade sobre a tecnologia e a arquitetura, enquanto a equipe de produto ganha em autonomia e excelência técnica - todos ganham.</p>
+<p>Referências</p>
+<p>Brown, S. &ldquo;Software Architecture for Developers-Volume 1: Technical leadership and the balance with agility.&rdquo; (2018).
+Richards, Mark, and Neal Ford. Fundamentals of Software Architecture: An Engineering Approach. &quot; O&rsquo;Reilly Media, Inc.&quot;, 2020.
+​​Hewitt, Eben. Technology Strategy Patterns: Architecture as Strategy. O&rsquo;Reilly Media, Incorporated, 2018.
+<a href="https://riskstorming.com/">https://riskstorming.com/</a>
+<a href="https://agilemanifesto.org/">https://agilemanifesto.org/</a></p>
 
 </div>
 
